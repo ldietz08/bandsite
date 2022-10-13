@@ -1,0 +1,35 @@
+@use "../colors"as *;
+@use "../breakpoints"as breakpoints;
+@use "../text-styles" as text;
+
+.header {
+    background-color: $black;
+    margin: 0;
+
+&__title-container {
+    display: flex;
+    justify-content: center;
+}
+
+&__title {
+    color: $white;
+    @include text.page-header-mobile;
+}  
+&__navigation {
+    margin-bottom: 0;
+}
+&__list {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0;
+}
+&__list-item {
+   list-style: none;
+   color: $white;
+   padding-bottom: 1rem;
+}
+&__list-item--bb {
+    border-bottom: 0.3rem solid $white;
+}
+}
+
