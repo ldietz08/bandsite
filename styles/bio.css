@@ -35,6 +35,7 @@
 }
 .header__title {
   color: #FFFFFF;
+  text-transform: uppercase;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -54,6 +55,36 @@
 }
 .header__list-item--bb {
   border-bottom: 0.3rem solid #FFFFFF;
+}
+
+.hero__title {
+  margin-left: 1rem;
+}
+.hero__title-container {
+  background-image: url(/assets/images/hero-bio.jpg);
+  background-size: cover;
+  background-position: 100% 0%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.about__title {
+  margin-left: 1rem;
+}
+.about__image {
+  height: auto;
+  width: 100vw;
+  padding: 0.2rem 1rem;
+}
+.about__quote {
+  padding: 0 1rem;
+  font-size: medium;
+}
+
+.bio {
+  padding: 0 1rem;
 }
 
 html,

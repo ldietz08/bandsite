@@ -1,0 +1,39 @@
+@use "../colors"as *;
+@use "../breakpoints"as breakpoints;
+@use "../text-styles"as text;
+
+.hero {
+&__title {
+    margin-left: 1rem;
+}
+
+&__title-container {
+    background-image: url(/assets/images/hero-bio.jpg);
+    background-size: cover;
+    background-position: 100% 0%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    color: $white;
+}
+}
+
+.about {
+&__title {
+    margin-left: 1rem;
+}
+
+&__image {
+    height: auto;
+    width: 100vw;
+    padding: 0.2rem 1rem;
+    }
+&__quote {
+    padding: 0 1rem;
+    font-size: medium; //change! 
+}
+}
+
+.bio {
+    padding: 0 1rem;
+}

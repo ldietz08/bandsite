@@ -13,6 +13,7 @@
 
 &__title {
     color: $white;
+    text-transform: uppercase;
     @include text.page-header-mobile;
 }  
 &__navigation {
