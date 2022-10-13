@@ -105,6 +105,21 @@
   padding: 0.5rem 1rem;
 }
 
+.footer {
+  background-color: #323232;
+  padding: 1rem;
+  color: #FFFFFF;
+}
+.footer__icon {
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  width: 2rem;
+  height: 2rem;
+}
+.footer__text {
+  line-height: 2rem;
+}
+
 html,
 body {
   margin: 0;

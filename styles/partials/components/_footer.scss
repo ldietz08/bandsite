@@ -1,3 +1,20 @@
 @use "../colors"as *;
 @use "../breakpoints"as breakpoints;
 @use "../text-styles"as text;
+
+.footer{
+    background-color: $black;
+    padding: 1rem;
+    color: $white;
+
+&__icon {
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+&__text {
+    line-height: 2rem;
+}
+}
