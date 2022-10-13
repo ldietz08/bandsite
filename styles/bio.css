@@ -71,7 +71,7 @@
 }
 
 .about__title {
-  margin-left: 1rem;
+  padding-left: 1rem;
 }
 .about__image {
   height: auto;
@@ -85,6 +85,24 @@
 
 .bio {
   padding: 0 1rem;
+}
+
+.gallery {
+  background-color: #FAFAFA;
+}
+.gallery__title {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  margin-bottom: 0;
+}
+.gallery__container {
+  display: flex;
+  flex-direction: column;
+}
+.gallery__img {
+  height: auto;
+  width: 100vw;
+  padding: 0.5rem 1rem;
 }
 
 html,
