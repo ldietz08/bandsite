@@ -31,7 +31,7 @@
 
 .about {
 &__title {
-    padding-left: 1rem;
+    padding-left: 2rem;
     padding-top: 1.5rem;
     margin-top: 0;
     margin-bottom: 0;
@@ -40,7 +40,9 @@
 }
 &__image-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 &__image {
     width: 100%;
@@ -53,14 +55,42 @@
 &__quote {
     margin-top: 0;
     padding: 0 1rem;
+    width: 70%;
     @include text.subheader-mobile;
+}
+&__quote-span {
+    @include breakpoints.medium {
+       @include text.body-copy-desktop-tablet;
+       font-size: 0.75rem;
+       font-weight: 600;
+    }
 }
 }
 
 .bio {
     padding: 0 1rem;
+&__title {
+    @include breakpoints.medium {
+    margin-bottom: 0;
+    padding-top: 1rem;
+    padding-left: 7rem;
+    }
+}
+&__content-container {
+    @include breakpoints.medium {
+        display: flex;
+        justify-content: center;
+        padding: 0 2rem;
+        margin-right: 0;
+    }
+}
 &__content {
     @include text.body-copy-mobile;
+    @include breakpoints.medium {
+        padding: 1rem 1rem;
+        margin-top: 0;
+        width: 40%;
+    }
 }
 }
 
@@ -71,14 +101,28 @@
     margin-top: 0;
     margin-bottom: 0;
     // @include section-header-mobile;
+    @include breakpoints.medium {
+        padding-left: 2rem;
+        // @include section-header-desktop-tablet;
+    }
 }
 &__container {
     display: flex;
     flex-direction: column;
+    @include breakpoints.medium {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 1rem;
+    }
 }
 &__img {
     height: auto;
     width: 100vw;
     padding: 0.5rem 1rem;
+    @include breakpoints.medium {
+        width: 15rem;
+        padding: 0.5rem;
+    }
 }
 }
