@@ -5,32 +5,46 @@
 .header {
     background-color: $black;
     margin: 0;
+    @include breakpoints.medium {
+        display: flex;
+        justify-content: flex-start;
+        padding: 1rem 0 1.5rem 3rem;
+    }
 
-&__title-container {
+&__logo-container {
     display: flex;
     justify-content: center;
+    padding-top: 1rem;
+    @include breakpoints.medium {
+        margin: 0 3rem 0 2rem;
+    }
 }
-
-&__title {
-    color: $white;
-    text-transform: uppercase;
-    @include text.page-header-mobile;
-}  
 &__navigation {
     margin-bottom: 0;
+    @include text.section-header-mobile;
 }
 &__list {
     display: flex;
     justify-content: space-around;
     padding-left: 0;
+    margin-bottom: 0;
+    width: 100%;
 }
 &__list-item {
    list-style: none;
    color: $white;
-   padding-bottom: 1rem;
+   width: 50%;
+   text-align: center;
+   @include text.subheader-mobile;
+   @include breakpoints.medium {
+       padding-left: 3rem;
+   }
 }
 &__list-item--bb {
     border-bottom: 0.3rem solid $white;
+    @include breakpoints.medium {
+        border-bottom: none; 
+    }
 }
 }
 
