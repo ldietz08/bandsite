@@ -224,16 +224,37 @@
   padding: 1rem;
   color: #FFFFFF;
 }
+@media only screen and (min-width: 768px) {
+  .footer {
+    padding: 2rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .footer__title-icon-container {
+    display: flex;
+    align-items: center;
+  }
+}
 .footer__title {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
+}
+@media only screen and (min-width: 768px) {
+  .footer__title {
+    padding-right: 1.5rem;
+  }
 }
 .footer__icon {
   margin-right: 1.2rem;
   margin-bottom: 2rem;
   width: 1.5rem;
   height: 1.5rem;
+}
+@media only screen and (min-width: 768px) {
+  .footer__icon {
+    margin-bottom: 0;
+  }
 }
 .footer__text-title {
   font-size: 0.875rem;
@@ -252,8 +273,42 @@
   line-height: 1.125rem;
   font-weight: 400;
 }
+@media only screen and (min-width: 768px) {
+  .footer__text {
+    width: 65%;
+  }
+}
+.footer__text-email {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+@media only screen and (min-width: 768px) {
+  .footer__content-container {
+    display: flex;
+    padding-top: 0;
+  }
+}
 .footer__content {
   margin-top: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  .footer__logo-container {
+    position: relative;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .footer__logo {
+    position: absolute;
+    bottom: 11.5rem;
+    left: 37rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .footer__text-copyright {
+    padding-top: 1.5rem;
+    margin-bottom: 0;
+  }
 }
 
 html,

@@ -6,14 +6,29 @@
     background-color: $black;
     padding: 1rem;
     color: $white;
+    @include breakpoints.medium {
+        padding: 2rem;
+    }
+&__title-icon-container {
+    @include breakpoints.medium {
+        display: flex; 
+        align-items: center;
+    }
+}
 &__title {
     @include text.section-header-mobile;
+    @include breakpoints.medium {
+        padding-right: 1.5rem;
+    }
 }
 &__icon {
     margin-right: 1.2rem;
     margin-bottom: 2rem;
     width: 1.5rem;
     height: 1.5rem;
+    @include breakpoints.medium {
+        margin-bottom: 0;
+    }
 }
 &__text-title {
     @include text.subheader-mobile;
@@ -26,11 +41,38 @@
 &__text {
     width: 60%;
     @include text.body-copy-mobile;
+    @include breakpoints.medium {
+        width: 65%;
+    }
 }
-// &__text-email {
-//     padding-bottom: 1rem;
-// }
+&__text-email {
+    @include text.body-copy-mobile;
+}
+&__content-container {
+    @include breakpoints.medium {
+        display: flex;
+        padding-top: 0;
+    }
+}
 &__content {
     margin-top: 1rem;
+}
+&__logo-container {
+    @include breakpoints.medium {
+        position: relative;
+    }
+}
+&__logo {
+    @include breakpoints.medium {
+        position: absolute;
+        bottom: 11.5rem;
+        left: 37rem;
+    }
+}
+&__text-copyright {
+    @include breakpoints.medium {
+        padding-top: 1.5rem;
+        margin-bottom: 0;
+    }
 }
 }
