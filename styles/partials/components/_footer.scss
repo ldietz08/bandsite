@@ -9,6 +9,9 @@
     @include breakpoints.medium {
         padding: 2rem;
     }
+    @include breakpoints.large {
+        padding: 2rem 6rem;
+    }
 &__title-icon-container {
     @include breakpoints.medium {
         display: flex; 
@@ -29,6 +32,10 @@
     @include breakpoints.medium {
         margin-bottom: 0;
     }
+    @include breakpoints.large {
+        width: 1rem;
+        height: 1rem;
+    }
 }
 &__text-title {
     @include text.subheader-mobile;
@@ -47,6 +54,8 @@
 }
 &__text-email {
     @include text.body-copy-mobile;
+    color: $white;
+    text-decoration: none;
 }
 &__content-container {
     @include breakpoints.medium {
@@ -68,10 +77,14 @@
         bottom: 11.5rem;
         left: 37rem;
     }
+    @include breakpoints.large {
+        bottom: 11.5rem;
+        left: 61rem;
+    }
 }
 &__text-copyright {
     @include breakpoints.medium {
-        padding-top: 1.5rem;
+        padding-top: 2rem;
         margin-bottom: 0;
     }
 }

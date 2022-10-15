@@ -8,15 +8,20 @@
     @include breakpoints.medium {
         display: flex;
         justify-content: flex-start;
-        padding: 1rem 0 1.5rem 3rem;
+        padding-left: 3rem;
+    }
+    @include breakpoints.large {
+        padding-top: 0;
+        padding-left: 8rem;
     }
 
 &__logo-container {
     display: flex;
+    align-items: center;
     justify-content: center;
     padding-top: 1rem;
     @include breakpoints.medium {
-        margin: 0 3rem 0 2rem;
+        margin: 0 2.5rem 0.5rem 0;
     }
 }
 &__navigation {
@@ -35,16 +40,16 @@
    color: $white;
    width: 50%;
    text-align: center;
-   @include text.subheader-mobile;
-   @include breakpoints.medium {
-       padding-left: 3rem;
-   }
-}
-&__list-item--bb {
-    border-bottom: 0.3rem solid $white;
-    @include breakpoints.medium {
-        border-bottom: none; 
+   padding-bottom: 0.5rem;
+   font-weight: 500;
+   font-size: 1rem;
+    &--bb {
+        border-bottom: 0.25rem solid $white;
     }
-}
-}
+   @include breakpoints.medium {
+       margin-left: 2rem;
+       padding-bottom: 1rem;
+   }
 
+}
+}
