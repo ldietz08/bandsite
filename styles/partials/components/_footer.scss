@@ -5,9 +5,8 @@
 .footer{
     background-color: $black;
     padding: 1rem;
-    
     color: $white;
-
+    @include text.footer-copy-desktop-tablet;
     @include breakpoints.medium {
         padding: 2rem;
     }
@@ -21,40 +20,42 @@
     }
 }
 &__title {
-    @include text.section-header-mobile;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
     @include breakpoints.medium {
-        padding-right: 1.5rem;
+        margin-right: 1.5rem;
     }
+}
+&__icons-container {
+    padding-bottom: 0.5rem;
 }
 &__icon {
     margin-right: 1.2rem;
     width: 1.5rem;
     height: 1.5rem;
     @include breakpoints.medium {
-        margin-bottom: 0;
+        margin-left: 0.5rem;
     }
     @include breakpoints.large {
-        width: 1rem;
-        height: 1rem;
+        margin-right: 0.5rem;
     }
 }
 &__text-title {
-    @include text.subheader-mobile;
+    font-weight: 600;
 }
-
 &__text-subtitle{
     margin-top: 0;
-    @include text.subheader-mobile;
+    font-weight: 600;
+    @include breakpoints.large {
+        margin-bottom: 1.5rem;
+    }
 }
 &__text {
-    width: 60%;
-    @include text.body-copy-mobile;
-    @include breakpoints.medium {
-        width: 65%;
+    @include breakpoints.large {
+        margin-bottom: 1.5rem;
     }
 }
 &__text-email {
-    @include text.body-copy-mobile;
     color: $white;
     text-decoration: none;
 }
@@ -65,31 +66,35 @@
     }
 }
 &__content {
+    max-width: 1280px;
     margin-top: 1rem;
+    @include breakpoints.medium {
+        padding-right: 2.5rem;
+    }
+    @include breakpoints.large {
+        padding-right: 5rem;
+    }
 }
 &__logo-container {
-    margin-top: 2rem;
-    @include breakpoints.medium {
-        position: relative;
-    }
+    margin-top: 4rem;
+    position: relative;
 }
 &__logo {
     @include breakpoints.medium {
         position: absolute;
-        bottom: 12.5rem;
-        left: 37rem;
+        bottom: 15.5rem;
+        left: 36rem;
     }
     @include breakpoints.large {
-        bottom: 11.5rem;
-        left: 61rem;
+        bottom: 17rem;
+        left: 61.5rem;
     }
 }
 &__text-copyright {
     width: 100%;
     font-size: 0.6rem;
-    padding-top: 2rem;
+    margin-bottom: 0;
     @include breakpoints.medium {
-        padding-top: 1rem;
         margin-bottom: 0;
     }
 }
