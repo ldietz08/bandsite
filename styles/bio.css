@@ -37,7 +37,7 @@
 }
 @media only screen and (min-width: 1280px) {
   .header {
-    padding-top: 0;
+    padding-top: 1rem;
     padding-left: 8rem;
   }
 }
@@ -84,6 +84,10 @@
   .header__list-item {
     margin-left: 2rem;
   }
+}
+.header__list-link {
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
 /* Hero section */
@@ -261,7 +265,7 @@
 }
 @media only screen and (min-width: 1280px) {
   .bio__title {
-    padding-left: 14rem;
+    padding-left: 14.5rem;
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
@@ -355,6 +359,7 @@
 }
 
 .footer {
+  position: relative;
   background-color: #323232;
   padding: 1rem;
   color: #FFFFFF;
@@ -448,19 +453,18 @@
 }
 .footer__logo-container {
   margin-top: 4rem;
-  position: relative;
 }
 @media only screen and (min-width: 768px) {
   .footer__logo {
     position: absolute;
-    bottom: 15.5rem;
-    left: 36rem;
+    top: 3rem;
+    left: 38rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .footer__logo {
-    bottom: 17rem;
-    left: 61.5rem;
+    top: 3rem;
+    left: 67rem;
   }
 }
 .footer__text-copyright {

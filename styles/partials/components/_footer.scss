@@ -3,6 +3,7 @@
 @use "../text-styles"as text;
 
 .footer{
+    position: relative;
     background-color: $black;
     padding: 1rem;
     color: $white;
@@ -77,17 +78,16 @@
 }
 &__logo-container {
     margin-top: 4rem;
-    position: relative;
 }
 &__logo {
     @include breakpoints.medium {
         position: absolute;
-        bottom: 15.5rem;
-        left: 36rem;
+        top: 3rem;
+        left: 38rem;
     }
     @include breakpoints.large {
-        bottom: 17rem;
-        left: 61.5rem;
+        top: 3rem;
+        left: 67rem;
     }
 }
 &__text-copyright {

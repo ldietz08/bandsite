@@ -12,7 +12,7 @@
         padding-top: 0.5rem;
     }
     @include breakpoints.large {
-        padding-top: 0;
+        padding-top: 1rem;
         padding-left: 8rem;
     }
 
@@ -53,5 +53,9 @@
    @include breakpoints.medium {
        margin-left: 2rem;
    }
+}
+&__list-link {
+    text-decoration: none;
+    color: $white;
 }
 }
