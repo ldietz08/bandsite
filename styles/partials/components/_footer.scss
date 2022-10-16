@@ -5,7 +5,9 @@
 .footer{
     background-color: $black;
     padding: 1rem;
+    
     color: $white;
+
     @include breakpoints.medium {
         padding: 2rem;
     }
@@ -26,7 +28,6 @@
 }
 &__icon {
     margin-right: 1.2rem;
-    margin-bottom: 2rem;
     width: 1.5rem;
     height: 1.5rem;
     @include breakpoints.medium {
@@ -67,6 +68,7 @@
     margin-top: 1rem;
 }
 &__logo-container {
+    margin-top: 2rem;
     @include breakpoints.medium {
         position: relative;
     }
@@ -74,7 +76,7 @@
 &__logo {
     @include breakpoints.medium {
         position: absolute;
-        bottom: 11.5rem;
+        bottom: 12.5rem;
         left: 37rem;
     }
     @include breakpoints.large {
@@ -83,8 +85,11 @@
     }
 }
 &__text-copyright {
+    width: 100%;
+    font-size: 0.6rem;
+    padding-top: 2rem;
     @include breakpoints.medium {
-        padding-top: 2rem;
+        padding-top: 1rem;
         margin-bottom: 0;
     }
 }

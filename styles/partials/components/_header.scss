@@ -8,7 +8,7 @@
     @include breakpoints.medium {
         display: flex;
         justify-content: flex-start;
-        padding-left: 3rem;
+        padding-left: 2rem;
     }
     @include breakpoints.large {
         padding-top: 0;
@@ -22,6 +22,7 @@
     padding-top: 1rem;
     @include breakpoints.medium {
         margin: 0 2.5rem 0.5rem 0;
+        padding-top: 0;
     }
 }
 &__navigation {
@@ -32,6 +33,7 @@
     display: flex;
     justify-content: space-around;
     padding-left: 0;
+    margin-top: 0.5rem; 
     margin-bottom: 0;
     width: 100%;
 }
@@ -41,15 +43,15 @@
    width: 50%;
    text-align: center;
    padding-bottom: 0.5rem;
-   font-weight: 500;
-   font-size: 1rem;
-    &--bb {
+   font-weight: 300;
+   font-size: 0.875rem;
+    &--active {
         border-bottom: 0.25rem solid $white;
+        font-weight: 600;
     }
    @include breakpoints.medium {
        margin-left: 2rem;
        padding-bottom: 1rem;
    }
-
 }
 }
