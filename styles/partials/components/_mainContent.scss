@@ -23,10 +23,10 @@
 &__title-container {
     background-image: 
     linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url(/assets/images/hero-bio.jpg);
+    url(../assets/images/hero-bio.jpg);
     background-size: cover;
-    background-position: 100% 0%;
-    height: 35vh;
+    background-position: 50% 50%;
+    height: 30vh;
     display: flex;
     align-items: center;
     color: $white;
@@ -45,7 +45,7 @@
 &__title {
     color: $black;
     padding-left: 1rem;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     margin-top: 0;
     margin-bottom: 0;
     @include text.page-header-mobile;
@@ -90,18 +90,19 @@
     width: 100%;
     @include text.subheader-mobile;
     @include breakpoints.medium {
+        padding-top: 1rem;
         width: 75%;
         font-size: 1.1rem;
         line-height: 2rem;
     }
     @include breakpoints.large {
     @include text.subheader-desktop-tablet;
-        width: 60%;
+        width: 70%;
         font-weight: 600;
         line-height: 1.5rem;
-        font-size: 0.875rem;
+        font-size: 1rem;
         margin-bottom: 0.5rem;
-        margin-right: 22rem;
+        margin-right: 15rem;
         //weight and size differed from style-guide
     }
 }
@@ -111,9 +112,6 @@
        font-size: 0.8rem;
        font-weight: 600;
        padding-top: 0;
-    @include breakpoints.large {
-        font-size: 0.6rem;
-    }
     }
 }
 }
@@ -123,9 +121,11 @@
     padding: 0 1rem;
 &__title {
     @include text.subheader-mobile;
+    font-weight: 600;
     @include breakpoints.medium {
+    @include text.subheader-desktop-tablet;
+    margin: 0;
     font-size: 1rem;
-    margin-bottom: 0;
     padding-top: 1rem;
     padding-left: 6.5rem;
     }
@@ -140,23 +140,24 @@
         display: flex;
         justify-content: center;
         padding: 0 1rem;
-        margin-right: 0;
+        margin-left: 1rem;
     }
     @include breakpoints.large {
         padding: 0;
+        margin-left: 1rem;
     }
 }
 &__content {
     @include text.body-copy-mobile;
     @include breakpoints.medium {
-        padding: 1rem 1rem;
+        padding: 0.5rem 1rem;
         margin-top: 0;
+        margin-right: 1rem;
         width: 40%;
     }
     @include breakpoints.large {
-        width: 35%;
-        padding-right: 2.5rem;
-        padding-left: 2.5rem;
+        padding-left: 5.5rem;
+        width: 38%;
     }
 }
 }
@@ -169,13 +170,13 @@
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 600;
-    // @include section-header-mobile;
     @include breakpoints.medium {
-        padding-left: 2rem;
+        padding-left: 3rem;
+        padding-bottom: 0.5rem;
         font-weight: 600;
     }
     @include breakpoints.large {
-        padding-left: 8rem;
+        padding-left: 5.5rem;
     }
 }
 &__container {
@@ -189,8 +190,8 @@
         padding-bottom: 1rem;
     }
     @include breakpoints.large {
-        max-width: 80%;
         margin: 0 auto;
+        padding: 1rem;
     }
 }
 &__img {

@@ -32,11 +32,12 @@
     display: flex;
     justify-content: flex-start;
     padding-left: 2rem;
+    padding-top: 0.5rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .header {
-    padding-top: 0;
+    padding-top: 1rem;
     padding-left: 8rem;
   }
 }
@@ -62,7 +63,7 @@
   display: flex;
   justify-content: space-around;
   padding-left: 0;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
   margin-bottom: 0;
   width: 100%;
 }
@@ -82,8 +83,11 @@
 @media only screen and (min-width: 768px) {
   .header__list-item {
     margin-left: 2rem;
-    padding-bottom: 1rem;
   }
+}
+.header__list-link {
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
 /* Hero section */
@@ -113,10 +117,10 @@
   }
 }
 .hero__title-container {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/hero-bio.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/hero-bio.jpg);
   background-size: cover;
-  background-position: 100% 0%;
-  height: 35vh;
+  background-position: 50% 50%;
+  height: 30vh;
   display: flex;
   align-items: center;
   color: #FFFFFF;
@@ -137,7 +141,7 @@
 .about__title {
   color: #323232;
   padding-left: 1rem;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 1.5rem;
@@ -202,6 +206,7 @@
 }
 @media only screen and (min-width: 768px) {
   .about__quote {
+    padding-top: 1rem;
     width: 75%;
     font-size: 1.1rem;
     line-height: 2rem;
@@ -212,12 +217,12 @@
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
-    width: 60%;
+    width: 70%;
     font-weight: 600;
     line-height: 1.5rem;
-    font-size: 0.875rem;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
-    margin-right: 22rem;
+    margin-right: 15rem;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -230,11 +235,6 @@
     padding-top: 0;
   }
 }
-@media only screen and (min-width: 768px) and (min-width: 1280px) {
-  .about__quote-span {
-    font-size: 0.6rem;
-  }
-}
 
 /* Biography section */
 .bio {
@@ -244,11 +244,15 @@
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
+  font-weight: 600;
 }
 @media only screen and (min-width: 768px) {
   .bio__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    margin: 0;
     font-size: 1rem;
-    margin-bottom: 0;
     padding-top: 1rem;
     padding-left: 6.5rem;
   }
@@ -267,12 +271,13 @@
     display: flex;
     justify-content: center;
     padding: 0 1rem;
-    margin-right: 0;
+    margin-left: 1rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .bio__content-container {
     padding: 0;
+    margin-left: 1rem;
   }
 }
 .bio__content {
@@ -282,16 +287,16 @@
 }
 @media only screen and (min-width: 768px) {
   .bio__content {
-    padding: 1rem 1rem;
+    padding: 0.5rem 1rem;
     margin-top: 0;
+    margin-right: 1rem;
     width: 40%;
   }
 }
 @media only screen and (min-width: 1280px) {
   .bio__content {
-    width: 35%;
-    padding-right: 2.5rem;
-    padding-left: 2.5rem;
+    padding-left: 5.5rem;
+    width: 38%;
   }
 }
 
@@ -307,13 +312,14 @@
 }
 @media only screen and (min-width: 768px) {
   .gallery__title {
-    padding-left: 2rem;
+    padding-left: 3rem;
+    padding-bottom: 0.5rem;
     font-weight: 600;
   }
 }
 @media only screen and (min-width: 1280px) {
   .gallery__title {
-    padding-left: 8rem;
+    padding-left: 5.5rem;
   }
 }
 .gallery__container {
@@ -331,8 +337,8 @@
 }
 @media only screen and (min-width: 1280px) {
   .gallery__container {
-    max-width: 80%;
     margin: 0 auto;
+    padding: 1rem;
   }
 }
 .gallery__img {
@@ -348,13 +354,17 @@
 }
 
 .footer {
+  position: relative;
   background-color: #323232;
   padding: 1rem;
   color: #FFFFFF;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
 }
 @media only screen and (min-width: 768px) {
   .footer {
-    padding: 2rem;
+    padding: 1rem 3rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -369,14 +379,16 @@
   }
 }
 .footer__title {
-  font-size: 1.5rem;
-  line-height: 2rem;
   font-weight: 500;
+  padding-bottom: 0.5rem;
 }
 @media only screen and (min-width: 768px) {
   .footer__title {
-    padding-right: 1.5rem;
+    margin-right: 1.5rem;
   }
+}
+.footer__icons-container {
+  padding-bottom: 0.5rem;
 }
 .footer__icon {
   margin-right: 1.2rem;
@@ -385,83 +397,84 @@
 }
 @media only screen and (min-width: 768px) {
   .footer__icon {
-    margin-bottom: 0;
+    margin-left: 0.5rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .footer__icon {
-    width: 1rem;
-    height: 1rem;
+    margin-right: 0.5rem;
   }
 }
 .footer__text-title {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
   font-weight: 600;
 }
 .footer__text-subtitle {
   margin-top: 0;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
   font-weight: 600;
+  width: 100%;
 }
-.footer__text {
-  width: 60%;
-  font-size: 0.813rem;
-  line-height: 1.125rem;
-  font-weight: 400;
+@media only screen and (min-width: 1280px) {
+  .footer__text-subtitle {
+    margin-bottom: 1.5rem;
+  }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1280px) {
   .footer__text {
-    width: 65%;
+    margin-bottom: 1.5rem;
   }
 }
 .footer__text-email {
-  font-size: 0.813rem;
-  line-height: 1.125rem;
-  font-weight: 400;
   color: #FFFFFF;
   text-decoration: none;
+}
+.footer__content-container {
+  max-width: 1280px;
 }
 @media only screen and (min-width: 768px) {
   .footer__content-container {
     display: flex;
+    align-items: center;
     padding-top: 0;
   }
 }
 .footer__content {
   margin-top: 1rem;
 }
-.footer__logo-container {
-  margin-top: 2rem;
-}
 @media only screen and (min-width: 768px) {
-  .footer__logo-container {
-    position: relative;
+  .footer__content {
+    padding-right: 2rem;
   }
+}
+@media only screen and (min-width: 1280px) {
+  .footer__content {
+    padding-right: 5rem;
+  }
+}
+.footer__logo-container {
+  margin-top: 4rem;
 }
 @media only screen and (min-width: 768px) {
   .footer__logo {
     position: absolute;
-    bottom: 12.5rem;
-    left: 37rem;
+    top: 3rem;
+    left: 38rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .footer__logo {
-    bottom: 11.5rem;
-    left: 61rem;
+    top: 3rem;
+    left: 67rem;
   }
 }
 .footer__text-copyright {
   width: 100%;
   font-size: 0.6rem;
-  padding-top: 2rem;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 768px) {
   .footer__text-copyright {
-    padding-top: 1rem;
     margin-bottom: 0;
+    font-size: 0.8rem;
   }
 }
 

@@ -9,9 +9,10 @@
         display: flex;
         justify-content: flex-start;
         padding-left: 2rem;
+        padding-top: 0.5rem;
     }
     @include breakpoints.large {
-        padding-top: 0;
+        padding-top: 1rem;
         padding-left: 8rem;
     }
 
@@ -33,7 +34,7 @@
     display: flex;
     justify-content: space-around;
     padding-left: 0;
-    margin-top: 0.5rem; 
+    margin-top: 0.2rem; 
     margin-bottom: 0;
     width: 100%;
 }
@@ -51,7 +52,10 @@
     }
    @include breakpoints.medium {
        margin-left: 2rem;
-       padding-bottom: 1rem;
    }
+}
+&__list-link {
+    text-decoration: none;
+    color: $white;
 }
 }
