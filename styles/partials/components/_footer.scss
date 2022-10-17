@@ -9,7 +9,7 @@
     color: $white;
     @include text.footer-copy-desktop-tablet;
     @include breakpoints.medium {
-        padding: 2rem;
+        padding: 3rem;
     }
     @include breakpoints.large {
         padding: 2rem 6rem;
@@ -96,6 +96,7 @@
     margin-bottom: 0;
     @include breakpoints.medium {
         margin-bottom: 0;
+        font-size: 1rem;
     }
 }
 }

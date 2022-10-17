@@ -23,7 +23,7 @@
 &__title-container {
     background-image: 
     linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url(/assets/images/hero-bio.jpg);
+    url(../assets/images/hero-bio.jpg);
     background-size: cover;
     background-position: 50% 50%;
     height: 30vh;
@@ -97,12 +97,12 @@
     }
     @include breakpoints.large {
     @include text.subheader-desktop-tablet;
-        width: 60%;
+        width: 70%;
         font-weight: 600;
         line-height: 1.5rem;
-        font-size: 0.875rem;
+        font-size: 1rem;
         margin-bottom: 0.5rem;
-        margin-right: 22rem;
+        margin-right: 15rem;
         //weight and size differed from style-guide
     }
 }
@@ -112,9 +112,6 @@
        font-size: 0.8rem;
        font-weight: 600;
        padding-top: 0;
-    @include breakpoints.large {
-        font-size: 0.6rem;
-    }
     }
 }
 }
@@ -127,8 +124,7 @@
     font-weight: 600;
     @include breakpoints.medium {
     @include text.subheader-desktop-tablet;
-    margin-bottom: 0;
-    margin-top: 0;
+    margin: 0 0 0 0.5rem;
     font-size: 1rem;
     padding-top: 1rem;
     padding-left: 6.5rem;
@@ -144,7 +140,7 @@
         display: flex;
         justify-content: center;
         padding: 0 1rem;
-        margin-right: 0;
+        margin-left: 1rem;
     }
     @include breakpoints.large {
         padding: 0;
