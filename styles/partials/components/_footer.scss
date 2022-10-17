@@ -9,7 +9,7 @@
     color: $white;
     @include text.footer-copy-desktop-tablet;
     @include breakpoints.medium {
-        padding: 1rem 3rem;
+        padding: 2rem 3rem;
     }
     @include breakpoints.large {
         padding: 2rem 6rem;
@@ -48,12 +48,15 @@
     margin-top: 0;
     font-weight: 600;
     width: 100%;
+    @include breakpoints.medium {
+        margin-bottom: 1.5rem;
+    }
     @include breakpoints.large {
         margin-bottom: 1.5rem;
     }
 }
 &__text {
-    @include breakpoints.large {
+    @include breakpoints.medium {
         margin-bottom: 1.5rem;
     }
 }
@@ -70,9 +73,9 @@
     }
 }
 &__content {
-    margin-top: 1rem;
+    margin-top: 2rem;
     @include breakpoints.medium {
-        padding-right: 2rem;
+        padding-right: 1rem;
     }
     @include breakpoints.large {
         padding-right: 5rem;
