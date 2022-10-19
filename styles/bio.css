@@ -1,3 +1,17 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir";
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 /* Regular */
 @font-face {
   font-family: "Avenir";
@@ -481,18 +495,4 @@
     margin-bottom: 0;
     font-size: 0.8rem;
   }
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Avenir";
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
 }/*# sourceMappingURL=bio.css.map */
