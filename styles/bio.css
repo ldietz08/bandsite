@@ -367,6 +367,12 @@ body {
   }
 }
 
+/* Form */
+.form__image {
+  width: 1rem;
+  height: 1rem;
+}
+
 .footer {
   position: relative;
   background-color: #323232;
