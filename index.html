@@ -66,19 +66,24 @@
         </div>
     </section>
 
-    <!-- <form class="form">
-        <h1>Join The Conversation</h1> -->
+    <div><h1 class="form__title">Join The Conversation</h1></div> 
+    <form class="form" id= "submitComment">
         <div class="form__item">
-            <!-- <img src="./assets/images/Mohan-muruge.jpg" alt="Side profile of man" class="form__image"> -->
-            <!-- <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Enter your name">
+            <img src="./assets/images/Mohan-muruge.jpg" alt="Side profile of man" class="form__image">
         </div>
-        <div>
-            <label for="comment">Comment</label>
-            <input type="text" id="comment" name="comment" required placeholder="Add a new comment">
+        <div class="form__item">
+            <label for="name" class="form__label">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name" class="form__input">
+            <label for="comment" class="form__label">Comment</label>
+            <input type="text" id="comment" name="comment" required placeholder="Add a new comment" class="form__input form__input-body">
         </div>
-        <button>Comment</button>
-    </form> -->
+        <div class="form__item">
+            <button type="submit" class="form__button">Comment</button>
+        </div>
+    </form>
+    <section class="form__submit-success"></section>
+
+    <section class="comments__container"></section>
     
     <footer class="footer">
         <div class="footer__title-icon-container">

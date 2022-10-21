@@ -26,27 +26,17 @@ const shows = [
     location: "San Francisco, CA"
     },
     {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
+    date: "Wed Dec 15 2021",
+    venue: "Press Club",
     location: "San Francisco, CA"
     },
-    {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA"
-    }
 ];
 
-// const renderShows = (showsObj, showsContainer) => {
 
-    const showsItemContainer = document.createElement('section');
-    showsItemContainer.classList.add("shows");
-    document.body.appendChild(showsItemContainer);
-
-    // Date
+const renderShows = (showsObj, showsContainer) => {
     const showsItemDate = document.createElement('div');
     showsItemDate.classList.add("shows__item");
-    showsItemContainer.appendChild(showsItemDate);
+    showsContainer.appendChild(showsItemDate);
 
     const showsItemTitleDate = document.createElement('p');
     showsItemTitleDate.classList.add("shows__item-title");
@@ -55,13 +45,12 @@ const shows = [
 
     const showsItemDateText = document.createElement('p');
     showsItemDateText.classList.add("shows__item-text");
-    // showsItemDateText.innerText = showsObj.date;
+    showsItemDateText.innerText = showsObj.date;
     showsItemDate.appendChild(showsItemDateText);
 
-    // Venue 
     const showsItemVenue = document.createElement('div');
     showsItemVenue.classList.add("shows__item");
-    showsItemContainer.appendChild(showsItemVenue);
+    showsContainer.appendChild(showsItemVenue);
 
     const showsItemTitleVenue = document.createElement('p');
     showsItemTitleVenue.classList.add("shows__item-title");
@@ -70,13 +59,12 @@ const shows = [
 
     const showsItemVenueText = document.createElement('p');
     showsItemVenueText.classList.add("shows__item-text");
-    // showsItemVenueText.innerText = showsObj.venue;
+    showsItemVenueText.innerText = showsObj.venue;
     showsItemVenue.appendChild(showsItemVenueText);
 
-    // Location
     const showsItemLocation = document.createElement('div');
     showsItemLocation.classList.add("shows__item");
-    showsItemContainer.appendChild(showsItemLocation);
+    showsContainer.appendChild(showsItemLocation);
 
     const showsItemTitleLocation = document.createElement('p');
     showsItemTitleLocation.classList.add("shows__item-title");
@@ -85,21 +73,23 @@ const shows = [
 
     const showsItemLocationText = document.createElement('p');
     showsItemLocationText.classList.add("shows__item-text");
-    showsItemLocationText.innerText = "San Francisco, CA"
+    showsItemLocationText.innerText = showsObj.location;
     showsItemLocation.appendChild(showsItemLocationText);
 
     const showsItemButton = document.createElement('button');
     showsItemButton.classList.add("shows__item-button");
+    showsItemButton.classList.add("shows__item-b")
     showsItemButton.innerText = "Buy Tickets";
-    showsItemContainer.appendChild(showsItemButton);
+    showsContainer.appendChild(showsItemButton);
+}
 
-// }
+const render = () => {
+    const showsContainer = document.querySelector(".shows")
+    showsContainer.innerHTML = "";
 
-// const render = () => {
-//     const showsContainer = document.querySelector(".shows")
-//     showsContainer.innerHTML = "";
+    for(let i = 0; i < shows.length; i++) {
+    renderShows(shows[i], showsContainer)
+}
+}
 
-//     for(let i = 0; i < shows.length; i++) {
-//     renderShows(shows[i], showsContainer)
-// }
-// }
+render();

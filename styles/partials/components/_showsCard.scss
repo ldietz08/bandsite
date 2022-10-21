@@ -11,7 +11,10 @@
     @include breakpoints.medium {
         display: flex;
         flex-direction: row;
-        justify-content: space-around
+        flex-wrap: wrap;
+        justify-content: space-around;
+        // padding-left: 2rem;
+        // padding-right: 2rem;
     }
     
     &__title {
@@ -45,10 +48,8 @@
         text-transform: uppercase;
         letter-spacing: 0.1rem;
         width: 100%;
-
-        @include breakpoints.medium {
-            width: 25%;
-            height: 8%;
-        }
+        // @include breakpoints.medium {
+        //     width: 50%;
+        // }
     }
 }
