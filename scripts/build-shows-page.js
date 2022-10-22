@@ -32,11 +32,15 @@ const shows = [
     },
 ];
 
-
 const renderShows = (showsObj, showsContainer) => {
+
+    const showsItemWrapper = document.createElement('div');
+    showsItemWrapper.classList.add("shows__item-wrapper");
+    showsContainer.appendChild(showsItemWrapper);
+
     const showsItemDate = document.createElement('div');
     showsItemDate.classList.add("shows__item");
-    showsContainer.appendChild(showsItemDate);
+    showsItemWrapper.appendChild(showsItemDate);
 
     const showsItemTitleDate = document.createElement('p');
     showsItemTitleDate.classList.add("shows__item-title");
@@ -50,7 +54,7 @@ const renderShows = (showsObj, showsContainer) => {
 
     const showsItemVenue = document.createElement('div');
     showsItemVenue.classList.add("shows__item");
-    showsContainer.appendChild(showsItemVenue);
+    showsItemWrapper.appendChild(showsItemVenue);
 
     const showsItemTitleVenue = document.createElement('p');
     showsItemTitleVenue.classList.add("shows__item-title");
@@ -64,7 +68,7 @@ const renderShows = (showsObj, showsContainer) => {
 
     const showsItemLocation = document.createElement('div');
     showsItemLocation.classList.add("shows__item");
-    showsContainer.appendChild(showsItemLocation);
+    showsItemWrapper.appendChild(showsItemLocation);
 
     const showsItemTitleLocation = document.createElement('p');
     showsItemTitleLocation.classList.add("shows__item-title");
@@ -80,7 +84,11 @@ const renderShows = (showsObj, showsContainer) => {
     showsItemButton.classList.add("shows__item-button");
     showsItemButton.classList.add("shows__item-b")
     showsItemButton.innerText = "Buy Tickets";
-    showsContainer.appendChild(showsItemButton);
+    showsItemWrapper.appendChild(showsItemButton);
+
+    // const showsItemButtonContainer = document.createElement('div');
+    // showsItemButtonContainer.classList.add('shows__item-button-container');
+    //  showsItemButtonContainer.appendChild(showsItemButtonContainer);
 }
 
 const render = () => {

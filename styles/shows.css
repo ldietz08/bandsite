@@ -158,13 +158,21 @@ body {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  border-bottom: 1px solid #AFAFAF;
 }
 @media only screen and (min-width: 768px) {
   .shows {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+}
+.shows__item-wrapper {
+  border-bottom: 1px solid #E1E1E1;
+}
+@media only screen and (min-width: 768px) {
+  .shows__item-wrapper {
+    display: flex;
+    width: 100%;
     justify-content: space-around;
   }
 }
@@ -190,8 +198,7 @@ body {
   font-size: 0.813rem;
   line-height: 1.125rem;
   font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 .shows__item-button {
   font-size: 0.625rem;
@@ -207,6 +214,12 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .shows__item-button {
+    width: 22%;
+    margin-bottom: 1rem;
+  }
 }
 
 .footer {

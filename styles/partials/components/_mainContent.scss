@@ -216,8 +216,8 @@
     padding-left: 1rem;
 }
 &__image {
-        width: 2.5rem;
-        height: 2rem;
+        width: 2.8rem;
+        height: 2.5rem;
         margin-left: 0.5rem;
         margin-top: 1rem;
         border-radius: 50%;
@@ -238,12 +238,16 @@
     border: 1px solid $mercury;
     background-color: $alabaster;
     padding-right: 1rem;
+    margin-bottom: 1rem;
 }
+// &__input::placeholder {
+//     vertical-align: top;
+// }
 &__input-body {
     height: 5rem;
 }
 &__button {
-    margin-left: 6.2rem;
+    margin-left: 5.5rem;
     @include text.labels-buttons-mobile;
     font-weight: 400;
     font-size: 0.875rem;
@@ -254,7 +258,7 @@
     color: $white;
     background-color: $black;
     text-transform: uppercase;
-    width: 64%;
+    width: 64.5%;
 }
 }
 
