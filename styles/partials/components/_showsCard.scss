@@ -12,6 +12,9 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
+    &__item {
+        width: 25%;
+    }
     &__item-wrapper{
         border-bottom: 1px solid $mercury;
         @include breakpoints.medium {
@@ -20,12 +23,18 @@
             justify-content: space-around;
         }
     }
+    &__item--wrapper:hover{
+        @include breakpoints.medium {
+            background-color: $silver;
+        }
+    }
     &__title {
         @include text.page-header-mobile;
         padding-left: 1rem;
         margin-bottom: 0;
     }
-    &__item-title {
+    &__item {
+        &--display-title {
         @include text.subheader-mobile;
         color: $silver;
         text-transform: uppercase;
@@ -34,6 +43,7 @@
         font-weight: 400;
         font-size: 0.6rem;
     }
+}
     &__item-text {
         @include text.body-copy-mobile;
         margin: 0;
@@ -52,7 +62,7 @@
         width: 100%;
 
         @include breakpoints.medium {
-            width: 22%;
+            max-width: 20%;
             margin-bottom: 1rem;
         }
     }

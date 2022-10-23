@@ -127,7 +127,7 @@
     margin: 0;
     font-size: 1rem;
     padding-top: 1rem;
-    padding-left: 6.5rem;
+    padding-left: 8rem;
     }
     @include breakpoints.large {
         padding-left: 15rem;
@@ -211,43 +211,61 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    @include breakpoints.medium {
+        display: block;
+    }
 &__title {
     @include text.page-header-mobile;
     padding-left: 1rem;
-}
-&__image {
-        width: 2.8rem;
-        height: 2.5rem;
-        margin-left: 0.5rem;
-        margin-top: 1rem;
-        border-radius: 50%;
+    @include breakpoints.medium {
+        padding-left: 2.5rem;
+        margin-bottom: 1rem;
     }
+}
+
+&__img {
+    background-image: url(../../../assets/images/Mohan-muruge.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    @include breakpoints.medium {
+        position: absolute;
+        left: 6rem;
+    }
+}
 &__item{
     display: flex;
     flex-direction: column;
 }
 &__label {
+    position: relative;
     @include text.labels-buttons-mobile;
     font-weight: 400;
     color: $silver;
     text-transform: uppercase;
+    @include breakpoints.medium {
+        width: 70%;
+        margin-left: 8rem;
+    }
 }
 &__input {
-    padding: 0.5rem 2.5rem;
     border-radius: 4px;
     border: 1px solid $mercury;
     background-color: $alabaster;
-    padding-right: 1rem;
+    padding: 0.5rem 0 0.5rem 1rem;
     margin-bottom: 1rem;
+    @include breakpoints.medium {
+        width: 70%;
+        margin-left: 8rem;
+    }
 }
-// &__input::placeholder {
-//     vertical-align: top;
-// }
 &__input-body {
-    height: 5rem;
+    padding-bottom: 4rem;
 }
 &__button {
-    margin-left: 5.5rem;
     @include text.labels-buttons-mobile;
     font-weight: 400;
     font-size: 0.875rem;
@@ -258,7 +276,11 @@
     color: $white;
     background-color: $black;
     text-transform: uppercase;
-    width: 64.5%;
+    width: 100%;
+    @include breakpoints.medium {
+        width: 30%;
+        margin-left: 25rem;
+    }
 }
 }
 

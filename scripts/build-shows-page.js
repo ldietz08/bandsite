@@ -34,61 +34,61 @@ const shows = [
 
 const renderShows = (showsObj, showsContainer) => {
 
-    const showsItemWrapper = document.createElement('div');
+    const showsItemWrapper = document.createElement("div");
     showsItemWrapper.classList.add("shows__item-wrapper");
     showsContainer.appendChild(showsItemWrapper);
 
-    const showsItemDate = document.createElement('div');
+    const showsItemDate = document.createElement("div");
     showsItemDate.classList.add("shows__item");
     showsItemWrapper.appendChild(showsItemDate);
 
-    const showsItemTitleDate = document.createElement('p');
-    showsItemTitleDate.classList.add("shows__item-title");
+    const showsItemTitleDate = document.createElement("p");
+    showsItemTitleDate.classList.add("shows__item-title", "shows__item--display-title");
     showsItemTitleDate.innerText = "Date";
     showsItemDate.appendChild(showsItemTitleDate);
 
-    const showsItemDateText = document.createElement('p');
+    const showsItemDateText = document.createElement("p");
     showsItemDateText.classList.add("shows__item-text");
     showsItemDateText.innerText = showsObj.date;
     showsItemDate.appendChild(showsItemDateText);
 
-    const showsItemVenue = document.createElement('div');
+    const showsItemVenue = document.createElement("div");
     showsItemVenue.classList.add("shows__item");
     showsItemWrapper.appendChild(showsItemVenue);
 
-    const showsItemTitleVenue = document.createElement('p');
-    showsItemTitleVenue.classList.add("shows__item-title");
+    const showsItemTitleVenue = document.createElement("p");
+    showsItemTitleVenue.classList.add("shows__item-title", "shows__item--display-title");
     showsItemTitleVenue.innerText = "Venue";
     showsItemVenue.appendChild(showsItemTitleVenue);
 
-    const showsItemVenueText = document.createElement('p');
+    const showsItemVenueText = document.createElement("p");
     showsItemVenueText.classList.add("shows__item-text");
     showsItemVenueText.innerText = showsObj.venue;
     showsItemVenue.appendChild(showsItemVenueText);
 
-    const showsItemLocation = document.createElement('div');
+    const showsItemLocation = document.createElement("div");
     showsItemLocation.classList.add("shows__item");
     showsItemWrapper.appendChild(showsItemLocation);
 
-    const showsItemTitleLocation = document.createElement('p');
-    showsItemTitleLocation.classList.add("shows__item-title");
+    const showsItemTitleLocation = document.createElement("p");
+    showsItemTitleLocation.classList.add("shows__item-title", "shows__item--display-title");
     showsItemTitleLocation.innerText = "Location";
     showsItemLocation.appendChild(showsItemTitleLocation);
 
-    const showsItemLocationText = document.createElement('p');
+    const showsItemLocationText = document.createElement("p");
     showsItemLocationText.classList.add("shows__item-text");
     showsItemLocationText.innerText = showsObj.location;
     showsItemLocation.appendChild(showsItemLocationText);
 
-    const showsItemButton = document.createElement('button');
+    // const showsItemButtonLink = document.createElement("a");
+    // showsItemButtonLink.classList.add("shows__item-button-link");
+    // showsItemButton.appendChild(showsItemButtonLink)
+
+    const showsItemButton = document.createElement("button");
     showsItemButton.classList.add("shows__item-button");
     showsItemButton.classList.add("shows__item-b")
     showsItemButton.innerText = "Buy Tickets";
     showsItemWrapper.appendChild(showsItemButton);
-
-    // const showsItemButtonContainer = document.createElement('div');
-    // showsItemButtonContainer.classList.add('shows__item-button-container');
-    //  showsItemButtonContainer.appendChild(showsItemButtonContainer);
 }
 
 const render = () => {

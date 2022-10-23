@@ -1,15 +1,3 @@
-// HTML form validation
-
-const formEl = document.getElementById('submitComment');
-
-formEl.addEventListener('submit', (event) => {
-    event.preventDefault();
-});
-
-const formSubmitSuccess = document.querySelector(".form__submit-success")
-const headingEl = document.createElement("h2")
-// headingEl.innerText = "Thanks for your comment, " + event.target.name.value;
-
 const uniqueId = () => Math.random().toString(36).substring(2, 9);
 
 const comments = [
@@ -32,32 +20,40 @@ const comments = [
 
 const renderComments = (commentsObj, commentsContainer) => {
 
-const commentsImg = document.createElement("div");
-commentsImg.classList.add("comments__img");
-commentsContainer.appendChild(commentsImg);
+    const imageContainerLeft = document.createElement("div");
+    imageContainerLeft.classList.add("comments__img-container");
+    commentsContainer.appendChild(imageContainerLeft);
 
-const commentsContentContainer = document.createElement('div');
-commentsContentContainer.classList.add("comments__content-container");
-commentsContainer.appendChild(commentsContentContainer);
+    const commentsImg = document.createElement("div");
+    commentsImg.classList.add("comments__img");
+    commentsContainer.appendChild(commentsImg);
 
-const commentsName = document.createElement("h3"); 
-commentsName.classList.add("comments__name");
-commentsName.innerText = commentsObj.name;
-commentsContentContainer.appendChild(commentsName);
+    const commentsWrapperRight = document.createElement("div");
+    commentsWrapperRight.classList.add("comments__wrapper-right");
+    commentsContainer.appendChild(commentsWrapperRight);
 
-const commentsDate = document.createElement("p");
-commentsDate.classList.add("comments__date");
-commentsDate.innerText = commentsObj.date;
-commentsContentContainer.appendChild(commentsDate);
+    const nameWrapper = document.createElement("div");
+    nameWrapper.classList.add("comments__wrapper-name-date");
+    commentsContainer.appendChild(nameWrapper);
 
-const commentsContent = document.createElement("p");
-commentsContent.classList.add("comments__content");
-commentsContent.innerText = commentsObj.comment;
-commentsContainer.appendChild(commentsContent);
+    const commentsName = document.createElement("h3"); 
+    commentsName.classList.add("comments__name");
+    commentsName.innerText = commentsObj.name;
+    commentsWrapperRight.appendChild(commentsName);
+
+    const commentsDate = document.createElement("p");
+    commentsDate.classList.add("comments__date");
+    commentsDate.innerText = commentsObj.date;
+    commentsWrapperRight.appendChild(commentsDate);
+
+    const commentsContent = document.createElement("p");
+    commentsContent.classList.add("comments__content");
+    commentsContent.innerText = commentsObj.comment;
+    commentsWrapperRight.appendChild(commentsContent);
 }
 
 const displayComment = () => {
-    const commentsContainer = document.querySelector(".comments__container")
+    const commentsContainer = document.querySelector(".comment__container")
     commentsContainer.innerHTML = "";
 
     for(let i = 0; i < comments.length; i++) {
@@ -67,4 +63,45 @@ const displayComment = () => {
 
 displayComment();
 
+const currentDate = new Date().toLocaleDateString();
+
+const form = document.querySelector(".comments__input");
+
+form.addEventListener("submit", newInput=> {
+
+    newInput.preventDefault();
+
+    const newComment = {};
+    newComment.name = newInput.target.name.value;
+    newComment.comment = newInput.target.comment.value;
+    newComment.date = currentDate;
+
+const showError = () => {
+    const commentsAddForm = document.querySelector(".comments__add");
+    const commentsAddInput = document.querySelector(".comments__input")
+    commentsAddInput.classList.add("comments__input--error");
+    const commentsAddError = document.createElement("p");
+    commentsAddError.textContent = "Please fill out the comment field";
+    commentsAddError.classList.add("comments__error");
+    commentsAddForm.appendChild(commentsAddError);
+
+    setTimeout(() => clearError(commentsAddForm, commentsAddInput, commentsAddError), 2000);
+}
+
+    if(newComment.name !== "" && newComment.comment!== "") {
+        comments.unshift(newComment);
+    }else{
+        showError();
+    }
+
+    displayComment()
+    console.log(comments)
+
+});
+
+//Form validation:
+const clearError = (commentsAddForm, commentsAddInput, commentsAddError) => {
+    commentsAddForm.removeChild(commentsAddError);
+    commentsAddInput.classList.remove("comments__input--error")
+}
 
