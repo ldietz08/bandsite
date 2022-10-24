@@ -1,7 +1,8 @@
 @use "./partials/resets";
 @use "./partials/fonts";
 @use "./partials/text-styles";
+@use "./partials/colors";
 @use "./partials/components/header";
-@use "./partials/components/mainContent";
-@use "./partials/components/comments";
+@use "./partials/components/mainContentShows";
+@use "./partials/components/showsCard";
 @use "./partials/components/footer";

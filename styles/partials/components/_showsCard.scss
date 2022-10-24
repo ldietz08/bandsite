@@ -1,0 +1,118 @@
+@use "../colors"as *;
+@use "../breakpoints"as breakpoints;
+@use "../text-styles"as text;
+
+.shows {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    
+    @include breakpoints.medium {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    @include breakpoints.large {
+        width: 65%;
+        margin-left: 20rem;
+    }
+    &__item {
+        width: 25%;
+    }
+    &__item-wrapper {
+        border-bottom: 1px solid $mercury;
+        @include breakpoints.medium {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+    }
+    &__item-wrapper:hover {
+        @include breakpoints.medium {
+            background-color: $mercury;
+        }
+    }
+    &__title-main {
+        margin-bottom: 0;
+        @include text.page-header-mobile;
+        padding-left: 1.5rem;
+
+        @include breakpoints.large {
+            padding-left: 6rem;
+            @include text.section-header-desktop-tablet;
+        }
+    }
+    &__title-date,
+    &__title-venue,
+    &__title-location {
+        display: none;
+        padding-left: 0.85rem;
+      
+    @include breakpoints.medium {
+        display: block;
+        @include text.body-copy-mobile;
+        text-transform: uppercase;
+        color: $silver;
+        width: 25%;
+        list-style: none;
+            }
+        }
+    &__title {
+        display: flex;
+        @include text.page-header-mobile;
+        padding-left: 1rem;
+        margin-bottom: 0;
+
+    @include breakpoints.large {
+        width: 65%;
+        margin-left: 20rem;
+        }
+    }
+    &__item {
+        &--display-title {
+        @include text.subheader-mobile;
+        color: $silver;
+        text-transform: uppercase;
+        padding-top: 0rem;
+        margin-bottom: 0;
+        font-weight: 400;
+        font-size: 0.6rem;
+        @include breakpoints.medium {
+            display: none;
+        }
+    }
+}
+    &__item-text {
+        @include text.body-copy-mobile;
+        margin: 0;
+        @include breakpoints.medium {
+            padding-top: 1.5rem;
+        }
+    }
+    &__item-text-date {
+        font-weight: 600;
+    }
+    &__item-button {
+        @include text.labels-buttons-mobile;
+        font-size: 0.875rem;
+        margin-top: 1rem;
+        padding: 0.8rem;
+        border: none;
+        border-radius: 6px;
+        color: $white;
+        background-color: $black;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        width: 100%;
+
+        @include breakpoints.medium {
+            max-width: 20%;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+    }
+    &__item-button:hover {
+        background-color: $dark-black;
+        transition: 0.3s ease-in-out;
+    }
+}
