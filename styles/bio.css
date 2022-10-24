@@ -137,7 +137,7 @@ body {
   }
 }
 .hero__title-container {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/hero-bio.jpg);
+  background-image: linear-gradient(to bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
   background-size: cover;
   background-position: 50% 50%;
   height: 30vh;
@@ -481,7 +481,7 @@ body {
   margin-bottom: 1.5rem;
   padding: 0.4rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #FFFFFF;
   background-color: #323232;
   text-transform: uppercase;
@@ -549,9 +549,10 @@ body {
 .comments__wrapper-right {
   display: flex;
   flex-wrap: wrap;
-  border-top: 0.5px solid #E1E1E1;
+  border-bottom: 0.5px solid #E1E1E1;
   justify-content: space-between;
   padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .comments__wrapper-right {
