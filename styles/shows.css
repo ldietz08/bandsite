@@ -106,22 +106,23 @@ body {
 
 /* Hero section */
 .hero__title-container {
-  display: flex;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/hero-shows.jpg);
   background-size: cover;
   background-position: 50% 50%;
-  height: 60vh;
+  height: 50vh;
   color: #FFFFFF;
 }
 @media only screen and (min-width: 768px) {
   .hero__title-container {
-    flex-direction: column;
-    height: 50vh;
+    height: 60vh;
+    background-position: 70% 30%;
   }
 }
 @media only screen and (min-width: 1280px) {
   .hero__title-container {
-    height: 70vh;
+    display: flex;
+    align-items: center;
+    height: 80vh;
   }
 }
 .hero__title-album {
@@ -130,9 +131,19 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .hero__title-album {
-    padding-top: 2rem;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    padding-top: 3rem;
     padding-bottom: 0;
     margin-left: 1rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__title-album {
+    margin-left: 6rem;
   }
 }
 .hero__title {
@@ -152,6 +163,7 @@ body {
     font-size: 3rem;
     padding-left: 1rem;
     letter-spacing: 0.1rem;
+    line-height: 3.5rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -159,31 +171,47 @@ body {
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: 600;
-    padding-left: 4rem;
+    margin-left: 6rem;
   }
 }
 .hero__iframe {
-  padding: 1rem 0 1rem 2rem;
-  width: 90%;
-  height: 30vh;
+  padding: 1rem 0.5rem 1.5rem 1.5rem;
+  width: 95%;
+  height: 25vh;
 }
 @media only screen and (min-width: 768px) {
   .hero__iframe {
     width: 50%;
     height: 25vh;
+    padding-left: 2rem;
+    padding-bottom: 3rem;
+    height: 30vh;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__iframe {
+    width: 100%;
+    margin-left: 4rem;
+    margin-top: 5rem;
   }
 }
 
 .shows {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0 1.5rem 1.5rem 1.5rem;
 }
 @media only screen and (min-width: 768px) {
   .shows {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows {
+    width: 65%;
+    margin-left: 20rem;
   }
 }
 .shows__item {
@@ -200,16 +228,54 @@ body {
   }
 }
 @media only screen and (min-width: 768px) {
-  .shows__item--wrapper:hover {
-    background-color: #AFAFAF;
+  .shows__item-wrapper:hover {
+    background-color: #E1E1E1;
+  }
+}
+.shows__title-main {
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  padding-left: 1.5rem;
+}
+@media only screen and (min-width: 1280px) {
+  .shows__title-main {
+    padding-left: 6rem;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 600;
+  }
+}
+.shows__title-date, .shows__title-venue, .shows__title-location {
+  display: none;
+  padding-left: 0.85rem;
+}
+@media only screen and (min-width: 768px) {
+  .shows__title-date, .shows__title-venue, .shows__title-location {
+    display: block;
+    font-size: 0.813rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #AFAFAF;
+    width: 25%;
+    list-style: none;
   }
 }
 .shows__title {
+  display: flex;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
   padding-left: 1rem;
   margin-bottom: 0;
+}
+@media only screen and (min-width: 1280px) {
+  .shows__title {
+    width: 65%;
+    margin-left: 20rem;
+  }
 }
 .shows__item--display-title {
   font-size: 0.875rem;
@@ -217,16 +283,29 @@ body {
   font-weight: 600;
   color: #AFAFAF;
   text-transform: uppercase;
-  padding-top: 0.1rem;
+  padding-top: 0rem;
   margin-bottom: 0;
   font-weight: 400;
   font-size: 0.6rem;
+}
+@media only screen and (min-width: 768px) {
+  .shows__item--display-title {
+    display: none;
+  }
 }
 .shows__item-text {
   font-size: 0.813rem;
   line-height: 1.125rem;
   font-weight: 400;
   margin: 0;
+}
+@media only screen and (min-width: 768px) {
+  .shows__item-text {
+    padding-top: 1.5rem;
+  }
+}
+.shows__item-text-date {
+  font-weight: 600;
 }
 .shows__item-button {
   font-size: 0.625rem;
@@ -247,7 +326,12 @@ body {
   .shows__item-button {
     max-width: 20%;
     margin-bottom: 1rem;
+    font-weight: 400;
   }
+}
+.shows__item-button:hover {
+  background-color: #000000;
+  transition: 0.3s ease-in-out;
 }
 
 .footer {

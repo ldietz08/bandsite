@@ -255,6 +255,7 @@ body {
   padding: 0 1rem;
 }
 .bio__title {
+  color: #000000;
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
@@ -295,6 +296,7 @@ body {
   }
 }
 .bio__content {
+  color: #323232;
   font-size: 0.813rem;
   line-height: 1.125rem;
   font-weight: 400;
@@ -317,8 +319,10 @@ body {
 /* Photo gallery */
 .gallery {
   background-color: #FAFAFA;
+  padding-bottom: 0.5rem;
 }
 .gallery__title {
+  color: #323232;
   padding: 1.5rem 0 1rem 1rem;
   margin-top: 0;
   margin-bottom: 0;
@@ -370,10 +374,7 @@ body {
 /* Form */
 .form {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  justify-content: flex-start;
 }
 @media only screen and (min-width: 768px) {
   .form {
@@ -381,6 +382,7 @@ body {
   }
 }
 .form__title {
+  color: #323232;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
@@ -396,13 +398,16 @@ body {
   background-image: url(../../../assets/images/Mohan-muruge.jpg);
   background-size: cover;
   border-radius: 50%;
-  height: 3rem;
-  width: 3rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin: 1rem 1rem 0 1rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .form__img {
     position: absolute;
-    left: 6rem;
+    left: 5rem;
   }
 }
 .form__item {
@@ -420,21 +425,26 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .form__label {
-    width: 70%;
-    margin-left: 8rem;
+    max-width: 70%;
+    margin-left: 9rem;
   }
 }
 .form__input {
   border-radius: 4px;
   border: 1px solid #E1E1E1;
   background-color: #FAFAFA;
-  padding: 0.5rem 0 0.5rem 1rem;
+  padding: 0.5rem 4rem 0.5rem 1rem;
   margin-bottom: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .form__input {
-    width: 70%;
-    margin-left: 8rem;
+    max-width: 70%;
+    margin-left: 9rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .form__input {
+    max-width: 60%;
   }
 }
 .form__input-body {
@@ -446,19 +456,18 @@ body {
   font-weight: 700;
   font-weight: 400;
   font-size: 0.875rem;
-  margin-top: 1rem;
+  margin-bottom: 1.5rem;
   padding: 0.4rem;
   border: none;
   border-radius: 6px;
   color: #FFFFFF;
   background-color: #323232;
   text-transform: uppercase;
-  width: 100%;
 }
 @media only screen and (min-width: 768px) {
   .form__button {
-    width: 30%;
-    margin-left: 25rem;
+    width: 20%;
+    margin-left: 33rem;
   }
 }
 
@@ -478,19 +487,21 @@ body {
   font-weight: 600;
   font-weight: 400;
   color: #AFAFAF;
+  padding-right: 1rem;
+  margin-bottom: 0;
 }
 .comments__img {
   background-color: #E1E1E1;
   border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-top: 0.5rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-top: 0.6rem;
   margin-left: 0.5rem;
   position: absolute;
 }
 @media only screen and (min-width: 768px) {
   .comments__img {
-    margin-left: 10rem;
+    margin-left: 9rem;
   }
 }
 .comments__content-container {
@@ -501,7 +512,9 @@ body {
 .comments__wrapper-right {
   display: flex;
   flex-wrap: wrap;
+  border-top: 0.5px solid #E1E1E1;
   justify-content: space-between;
+  padding-bottom: 0.5rem;
 }
 @media only screen and (min-width: 768px) {
   .comments__wrapper-right {
@@ -509,16 +522,16 @@ body {
   }
 }
 .comments__content {
+  color: #323232;
   font-size: 0.813rem;
   line-height: 1.125rem;
   font-weight: 400;
   margin: 0 0 0 3.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #E1E1E1;
 }
 @media only screen and (min-width: 768px) {
   .comments__content {
-    margin-left: 8rem;
+    margin-left: 5rem;
     max-width: 60%;
   }
 }
@@ -529,10 +542,11 @@ body {
   font-weight: 600;
   padding-left: 3.5rem;
   margin-bottom: 0;
+  color: #323232;
 }
 @media only screen and (min-width: 768px) {
   .comments__name {
-    padding-left: 5rem;
+    padding-left: 4rem;
   }
 }
 

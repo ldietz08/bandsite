@@ -48,7 +48,7 @@ const renderShows = (showsObj, showsContainer) => {
     showsItemDate.appendChild(showsItemTitleDate);
 
     const showsItemDateText = document.createElement("p");
-    showsItemDateText.classList.add("shows__item-text");
+    showsItemDateText.classList.add("shows__item-text", "shows__item-text-date");
     showsItemDateText.innerText = showsObj.date;
     showsItemDate.appendChild(showsItemDateText);
 
@@ -79,10 +79,6 @@ const renderShows = (showsObj, showsContainer) => {
     showsItemLocationText.classList.add("shows__item-text");
     showsItemLocationText.innerText = showsObj.location;
     showsItemLocation.appendChild(showsItemLocationText);
-
-    // const showsItemButtonLink = document.createElement("a");
-    // showsItemButtonLink.classList.add("shows__item-button-link");
-    // showsItemButton.appendChild(showsItemButtonLink)
 
     const showsItemButton = document.createElement("button");
     showsItemButton.classList.add("shows__item-button");

@@ -5,33 +5,37 @@
 /* Hero section */
 .hero {
         &__title-container {
-            display: flex;
             background-image:
                 linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url(../assets/images/hero-shows.jpg);
             background-size: cover;
             background-position: 50% 50%;
-            height: 60vh;
+            height: 50vh;
             color: $white;
-
             @include breakpoints.medium {
-                flex-direction: column;
-                height: 50vh;
+                height: 60vh;
+                background-position: 70% 30%;
             }
-    
             @include breakpoints.large {
-                height: 70vh;
+                display: flex;
+                align-items: center;
+                height: 80vh;
             }
         }
-
         &__title-album {
             margin-top: 0;
             padding: 2rem 1rem 1rem;
 
             @include breakpoints.medium {
-                padding-top: 2rem;
+                @include text.body-copy-desktop-tablet;
+                padding-top: 3rem;
                 padding-bottom: 0;
                 margin-left: 1rem;
+                margin-bottom: 0;
+                font-size: 1rem;
+            }
+            @include breakpoints.large {
+                margin-left: 6rem;
             }
         }
 
@@ -41,43 +45,37 @@
             margin-bottom: 0;
             @include text.page-header-mobile;
             letter-spacing: 0.1rem;
-
             @include breakpoints.medium {
                 @include text.page-header-desktop-tablet;
                 font-size: 3rem;
                 padding-left: 1rem;
                 letter-spacing: 0.1rem;
+                line-height: 3.5rem;
             }
             @include breakpoints.large {
                 @include text.page-header-desktop-tablet;
-                padding-left: 4rem;
+                margin-left: 6rem;
             }
         }
         &__iframe {
-            padding: 1rem 0 1rem 2rem;
-            width: 90%;
-            height: 30vh;
-
+            padding: 1rem 0.5rem 1.5rem 1.5rem;
+            width: 95%;
+            height: 25vh;
             @include breakpoints.medium {
                 width: 50%;
                 height: 25vh;
+                padding-left: 2rem;
+                padding-bottom: 3rem;
+                height: 30vh;
          } 
+            @include breakpoints.large {
+                width: 100%;
+                margin-left: 4rem;
+                margin-top: 5rem;
+            }
+    }
 }
 
-// .shows {
-//     &__title-date {
-//         @include breakpoints.medium {
-//             display: none;
-//         }
-//         @include breakpoints.large {
-//             display: none;
-//         }
-//     }
-//     &__item-wrapper:hover {
-//         background-color: $silver;
-//     }
-// }
 // .privacyPolicy {
 //     border-radius: 4px;
 // }
-}
