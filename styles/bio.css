@@ -83,16 +83,22 @@ body {
 }
 .header__list-item {
   list-style: none;
-  color: #FFFFFF;
+  color: #E1E1E1;
   width: 50%;
   text-align: center;
   padding-bottom: 0.5rem;
+  margin-right: 1rem;
   font-weight: 300;
   font-size: 0.875rem;
 }
 .header__list-item--active {
   border-bottom: 0.25rem solid #FFFFFF;
   font-weight: 600;
+  color: #FFFFFF;
+}
+.header__list-item--active:hover {
+  font-weight: 400;
+  transition: 0.3s ease-in-out;
 }
 @media only screen and (min-width: 768px) {
   .header__list-item {
@@ -131,7 +137,7 @@ body {
   }
 }
 .hero__title-container {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/hero-bio.jpg);
+  background-image: linear-gradient(to bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
   background-size: cover;
   background-position: 50% 50%;
   height: 30vh;
@@ -269,7 +275,7 @@ body {
     margin: 0;
     font-size: 1rem;
     padding-top: 1rem;
-    padding-left: 8rem;
+    padding-left: 6rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -374,7 +380,7 @@ body {
 /* Form */
 .form {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 @media only screen and (min-width: 768px) {
   .form {
@@ -390,12 +396,17 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .form__title {
-    padding-left: 2.5rem;
+    padding-left: 3rem;
     margin-bottom: 1rem;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .form__title {
+    padding-left: 6rem;
+  }
+}
 .form__img {
-  background-image: url(../../../assets/images/Mohan-muruge.jpg);
+  background-image: url(../assets/images/Mohan-muruge.jpg);
   background-size: cover;
   border-radius: 50%;
   height: 2.5rem;
@@ -407,7 +418,12 @@ body {
 @media only screen and (min-width: 768px) {
   .form__img {
     position: absolute;
-    left: 5rem;
+    left: 8rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .form__img {
+    left: 22.5rem;
   }
 }
 .form__item {
@@ -426,7 +442,12 @@ body {
 @media only screen and (min-width: 768px) {
   .form__label {
     max-width: 70%;
-    margin-left: 9rem;
+    margin-left: 12rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .form__label {
+    margin-left: 28rem;
   }
 }
 .form__input {
@@ -438,13 +459,14 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .form__input {
-    max-width: 70%;
-    margin-left: 9rem;
+    max-width: 60%;
+    margin-left: 12rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .form__input {
-    max-width: 60%;
+    max-width: 30%;
+    margin-left: 28rem;
   }
 }
 .form__input-body {
@@ -459,7 +481,7 @@ body {
   margin-bottom: 1.5rem;
   padding: 0.4rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #FFFFFF;
   background-color: #323232;
   text-transform: uppercase;
@@ -467,8 +489,18 @@ body {
 @media only screen and (min-width: 768px) {
   .form__button {
     width: 20%;
-    margin-left: 33rem;
+    margin-left: 31rem;
   }
+}
+@media only screen and (min-width: 1280px) {
+  .form__button {
+    margin-left: 42.5rem;
+    width: 12%;
+  }
+}
+.form__button:hover {
+  background-color: #000000;
+  transition: 0.3s ease-in-out;
 }
 
 .comments__container {
@@ -490,6 +522,10 @@ body {
   padding-right: 1rem;
   margin-bottom: 0;
 }
+.comments__img-container {
+  display: flex;
+  justify-content: center;
+}
 .comments__img {
   background-color: #E1E1E1;
   border-radius: 50%;
@@ -497,6 +533,7 @@ body {
   height: 2.4rem;
   margin-top: 0.6rem;
   margin-left: 0.5rem;
+  left: 0.2rem;
   position: absolute;
 }
 @media only screen and (min-width: 768px) {
@@ -504,21 +541,28 @@ body {
     margin-left: 9rem;
   }
 }
-.comments__content-container {
-  display: flex;
-  padding-left: 1rem;
-  max-width: 60%;
+@media only screen and (min-width: 1280px) {
+  .comments__img {
+    margin-left: 23rem;
+  }
 }
 .comments__wrapper-right {
   display: flex;
   flex-wrap: wrap;
-  border-top: 0.5px solid #E1E1E1;
+  border-bottom: 0.5px solid #E1E1E1;
   justify-content: space-between;
   padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .comments__wrapper-right {
     justify-content: space-around;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .comments__wrapper-right {
+    width: 60%;
+    margin-left: 14rem;
   }
 }
 .comments__content {

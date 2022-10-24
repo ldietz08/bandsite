@@ -21,15 +21,11 @@ const renderComments = (commentsObj, commentsContainer) => {
 
     const commentsImg = document.createElement("div");
     commentsImg.classList.add("comments__img");
-    commentsContainer.appendChild(commentsImg);
+    imageContainerLeft.appendChild(commentsImg);
 
     const commentsWrapperRight = document.createElement("div");
     commentsWrapperRight.classList.add("comments__wrapper-right");
     commentsContainer.appendChild(commentsWrapperRight);
-
-    const nameWrapper = document.createElement("div");
-    nameWrapper.classList.add("comments__wrapper-name-date");
-    commentsContainer.appendChild(nameWrapper);
 
     const commentsName = document.createElement("h3"); 
     commentsName.classList.add("comments__name");
@@ -90,7 +86,6 @@ const showError = () => {
     }
 
     displayComment()
-    console.log(comments)
 
 });
 
