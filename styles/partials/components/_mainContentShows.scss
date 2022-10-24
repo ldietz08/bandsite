@@ -62,20 +62,17 @@
             width: 95%;
             height: 25vh;
             @include breakpoints.medium {
-                width: 50%;
+                max-width: 40%;
                 height: 25vh;
                 padding-left: 2rem;
                 padding-bottom: 3rem;
                 height: 30vh;
          } 
             @include breakpoints.large {
-                width: 100%;
+                max-width: 100%;
                 margin-left: 4rem;
                 margin-top: 5rem;
             }
     }
 }
 
-// .privacyPolicy {
-//     border-radius: 4px;
-// }

@@ -40,15 +40,21 @@
 }
 &__list-item {
    list-style: none;
-   color: $white;
+   color: $mercury;
    width: 50%;
    text-align: center;
    padding-bottom: 0.5rem;
+   margin-right: 1rem;
    font-weight: 300;
    font-size: 0.875rem;
     &--active {
         border-bottom: 0.25rem solid $white;
         font-weight: 600;
+        color: $white;
+    }
+    &--active:hover {
+        font-weight: 400;
+        transition: 0.3s ease-in-out;
     }
    @include breakpoints.medium {
        margin-left: 2rem;
