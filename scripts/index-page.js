@@ -27,10 +27,6 @@ const renderComments = (commentsObj, commentsContainer) => {
     commentsWrapperRight.classList.add("comments__wrapper-right");
     commentsContainer.appendChild(commentsWrapperRight);
 
-    // const nameWrapper = document.createElement("div");
-    // nameWrapper.classList.add("comments__wrapper-name-date");
-    // commentsContainer.appendChild(nameWrapper);
-
     const commentsName = document.createElement("h3"); 
     commentsName.classList.add("comments__name");
     commentsName.innerText = commentsObj.name;
