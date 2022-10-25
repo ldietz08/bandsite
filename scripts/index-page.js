@@ -14,37 +14,50 @@ const comments = [
 ]
 
 const renderComments = (commentsObj, commentsContainer) => {
+    // create a div above for the border top;
 
-    const imageContainerLeft = document.createElement("div");
-    imageContainerLeft.classList.add("comments__img-container");
-    commentsContainer.appendChild(imageContainerLeft);
+    const contentContainer = document.createElement("div");
+    contentContainer.classList.add("comments__content-container");
+    commentsContainer.appendChild(contentContainer);
 
     const commentsImg = document.createElement("div");
     commentsImg.classList.add("comments__img");
-    imageContainerLeft.appendChild(commentsImg);
+    contentContainer.appendChild(commentsImg);
 
-    const commentsWrapperRight = document.createElement("div");
-    commentsWrapperRight.classList.add("comments__wrapper-right");
-    commentsContainer.appendChild(commentsWrapperRight);
+    const commentsContainerRight = document.createElement("div");
+    commentsContainerRight.classList.add("comments__content");
+    contentContainer.appendChild(commentsContainerRight);
+
+    const nameDateContainer = document.createElement("div");
+    nameDateContainer.classList.add("comments__name-date")
+    commentsContainerRight.appendChild(nameDateContainer);
+
+    const nameContainer = document.createElement("div");
+    nameContainer.classList.add("comments__item-container")
+    nameDateContainer.appendChild(nameContainer);
 
     const commentsName = document.createElement("h3"); 
     commentsName.classList.add("comments__name");
     commentsName.innerText = commentsObj.name;
-    commentsWrapperRight.appendChild(commentsName);
+    nameContainer.appendChild(commentsName);
+
+    const dateContainer = document.createElement("div");
+    dateContainer.classList.add("comments__item-container")
+    nameDateContainer.appendChild(dateContainer);
 
     const commentsDate = document.createElement("p");
     commentsDate.classList.add("comments__date");
     commentsDate.innerText = commentsObj.date;
-    commentsWrapperRight.appendChild(commentsDate);
+    dateContainer.appendChild(commentsDate);
 
     const commentsContent = document.createElement("p");
     commentsContent.classList.add("comments__content");
     commentsContent.innerText = commentsObj.comment;
-    commentsWrapperRight.appendChild(commentsContent);
+    commentsContainerRight.appendChild(commentsContent);
 }
 
 const displayComment = () => {
-    const commentsContainer = document.querySelector(".comment__container")
+    const commentsContainer = document.querySelector(".comments__container")
     commentsContainer.innerHTML = "";
 
     for(let i = 0; i < comments.length; i++) {
