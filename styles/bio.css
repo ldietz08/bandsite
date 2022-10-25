@@ -506,12 +506,44 @@ body {
 .comments__container {
   display: flex;
   flex-wrap: wrap;
-  padding: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .comments__container {
-    justify-content: center;
+    max-width: 60%;
+    margin-left: 15rem;
   }
+}
+.comments__content-container {
+  display: flex;
+  padding-left: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #E1E1E1;
+}
+.comments__img-container {
+  display: flex;
+}
+.comments__img {
+  flex-shrink: 0;
+  background-color: #E1E1E1;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 0.6rem;
+  margin-left: 0.5rem;
+}
+.comments__content {
+  color: #323232;
+  margin-top: 0;
+  padding-left: 0.5rem;
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+.comments__name {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-weight: 600;
 }
 .comments__date {
   font-size: 0.875rem;
@@ -522,76 +554,13 @@ body {
   padding-right: 1rem;
   margin-bottom: 0;
 }
-.comments__img-container {
+.comments__name-date {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
-.comments__img {
-  background-color: #E1E1E1;
-  border-radius: 50%;
-  width: 2.4rem;
-  height: 2.4rem;
-  margin-top: 0.6rem;
-  margin-left: 0.5rem;
-  left: 0.2rem;
-  position: absolute;
-}
-@media only screen and (min-width: 768px) {
-  .comments__img {
-    margin-left: 9rem;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .comments__img {
-    margin-left: 23rem;
-  }
-}
-.comments__wrapper-right {
+.comments__item-container {
   display: flex;
   flex-wrap: wrap;
-  border-bottom: 0.5px solid #E1E1E1;
-  justify-content: space-between;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-@media only screen and (min-width: 768px) {
-  .comments__wrapper-right {
-    justify-content: space-around;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .comments__wrapper-right {
-    width: 60%;
-    margin-left: 14rem;
-  }
-}
-.comments__content {
-  color: #323232;
-  font-size: 0.813rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-  margin: 0 0 0 3.5rem;
-  padding-bottom: 1rem;
-}
-@media only screen and (min-width: 768px) {
-  .comments__content {
-    margin-left: 5rem;
-    max-width: 60%;
-  }
-}
-.comments__name {
-  font-size: 0.813rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-  font-weight: 600;
-  padding-left: 3.5rem;
-  margin-bottom: 0;
-  color: #323232;
-}
-@media only screen and (min-width: 768px) {
-  .comments__name {
-    padding-left: 4rem;
-  }
 }
 
 .footer {
