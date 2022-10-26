@@ -14,7 +14,9 @@ const comments = [
 ]
 
 const renderComments = (commentsObj, commentsContainer) => {
-    // create a div above for the border top;
+    const borderTop = document.createElement("div")
+    borderTop.classList.add("comments__border-top");
+    commentsContainer.appendChild(borderTop);
 
     const contentContainer = document.createElement("div");
     contentContainer.classList.add("comments__content-container");

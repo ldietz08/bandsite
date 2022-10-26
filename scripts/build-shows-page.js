@@ -1,38 +1,20 @@
+const showDatesUrl = "https://project-1-api.herokuapp.com/showDates/?api_key=f45f2c53-e493-44e5-a5f0-78d66939e90e";
 
-const shows = [
-    {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA"
-    },
-    {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA"
-    },
-    {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA"
-    },
-    {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-    },
-    {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA"
-    },
-    {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA"
-    },
-];
+const render = () => {
+axios
+.get(showDatesUrl)
+.then(response => {
+    response.data.forEach((showsObj) => {
+        renderShows(showsObj)
+    })})
+.catch(error => {
+    console.log(error)
+})
+}
+render();
 
-const renderShows = (showsObj, showsContainer) => {
+const renderShows = (showsObj) => {
+    let showsContainer = document.querySelector(".shows")
 
     const showsItemWrapper = document.createElement("div");
     showsItemWrapper.classList.add("shows__item-wrapper");
@@ -63,7 +45,7 @@ const renderShows = (showsObj, showsContainer) => {
 
     const showsItemVenueText = document.createElement("p");
     showsItemVenueText.classList.add("shows__item-text");
-    showsItemVenueText.innerText = showsObj.venue;
+    showsItemVenueText.innerText = showsObj.place;
     showsItemVenue.appendChild(showsItemVenueText);
 
     const showsItemLocation = document.createElement("div");
@@ -87,13 +69,4 @@ const renderShows = (showsObj, showsContainer) => {
     showsItemWrapper.appendChild(showsItemButton);
 }
 
-const render = () => {
-    const showsContainer = document.querySelector(".shows")
-    showsContainer.innerHTML = "";
-
-    for(let i = 0; i < shows.length; i++) {
-    renderShows(shows[i], showsContainer)
-}
-}
-
-render();
+const currentDate = new Date().toLocaleDateString();
