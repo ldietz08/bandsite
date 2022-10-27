@@ -69,4 +69,6 @@ const renderShows = (showsObj) => {
     showsItemWrapper.appendChild(showsItemButton);
 }
 
-const currentDate = new Date().toLocaleDateString();
+const currentDate = new Date(1630900800000).toLocaleDateString();
+console.log(currentDate)
+

@@ -66,25 +66,30 @@
         </div>
     </section>
 
-    <section class="comments">
-        <div class="form__container">
+    <section class="form__container">
+        <div class="form__wrappper">
             <h1 class="form__title">Join The Conversation</h1>
-            <form class=" form comments__input" id="submitComment">
-                    <div class="form__item form__img"></div>
+            <form class="form" id="submitComment">
                     <div class="form__item">
-                        <label for="name" class="form__label">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your name" class="form__input comments__input">
-                        <label for="comment" class="form__label">Comment</label>
-                        <input type="text" id="comment" name="comment" required placeholder="Add a new comment" class="comments__input form__input form__input-body">
-                        <button type="submit" class="form__button comments__submit">Comment</button>
-                </div>
+                        <div>
+                            <div class="form__item form__img"></div>
+                            <label for="name" class="form__label">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your name" class="form__input">
+                        </div>
+                        <div class="form__input-wrapper">
+                            <label for="comment" class="form__label">Comment</label>
+                            <input type="text" id="comment" name="comment" required placeholder="Add a new comment" class="form__input form__input-body">
+                        </div>
+                        <div class="form__button">
+                           <button type="submit" class="form__button-submit">Comment</button> 
+                        </div> 
+                    </div>
+                    <div class="comments__container"></div>
             </form>
         </div>
     </section>
 
     <!-- <section class="form__submit-success"></section> -->
-
-    <div class="comments__container"></div>
     
     <footer class="footer">
         <div class="footer__title-icon-container">

@@ -71,7 +71,7 @@ displayComment();
 
 const currentDate = new Date().toLocaleDateString();
 
-const form = document.querySelector(".comments__input");
+const form = document.querySelector(".form");
 
 form.addEventListener("submit", newInput=> {
 

@@ -11,13 +11,17 @@
     display: flex;
     flex-wrap: wrap;
     @include breakpoints.medium {
-        max-width: 60%;
-        margin-left: 15rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    }
+    @include breakpoints.large {
+        padding-left: 15rem;
+        padding-right: 15rem;
     }
 }
 &__content-container {
     display: flex;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
 &__img-container {
     display: flex;
