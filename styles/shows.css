@@ -94,7 +94,6 @@ body {
 .header__list-item--active {
   border-bottom: 0.25rem solid #FFFFFF;
   font-weight: 600;
-  color: #FFFFFF;
 }
 .header__list-item--active:hover {
   font-weight: 400;

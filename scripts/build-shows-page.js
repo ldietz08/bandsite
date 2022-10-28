@@ -6,8 +6,10 @@ axios
 .then(response => {
     response.data.forEach((showsObj) => {
         renderShows(showsObj)
+        // let formatDate = new Date(response.data.date).toDateString();
+        // console.log(formatDate)
     })})
-.catch(error => {
+    .catch(error => {
     console.log(error)
 })
 }
@@ -68,7 +70,3 @@ const renderShows = (showsObj) => {
     showsItemButton.innerText = "Buy Tickets";
     showsItemWrapper.appendChild(showsItemButton);
 }
-
-const currentDate = new Date(1630900800000).toLocaleDateString();
-console.log(currentDate)
-
