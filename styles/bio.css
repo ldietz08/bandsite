@@ -446,7 +446,7 @@ body {
   background-color: #323232;
   text-transform: uppercase;
 }
-.form__button:hover {
+.form__button-submit:hover {
   background-color: #000000;
   transition: 0.3s ease-in-out;
 }

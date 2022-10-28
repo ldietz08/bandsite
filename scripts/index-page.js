@@ -1,19 +1,23 @@
-const comments = [
-    { 
-    name: "Connor Walton", 
-    date: '02/17/2021', 
-    comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."},
-    {
-    name: "Emilie Beach", 
-    date: '01/09/2021', 
-    comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
-    {
-    name: "Miles Acosta", 
-    date: '12/20/2020', 
-    comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough." },
-]
+const commentsUrl = "https://project-1-api.herokuapp.com/comments/?api_key=f45f2c53-e493-44e5-a5f0-78d66939e90e";
 
-const renderComments = (commentsObj, commentsContainer) => {
+const displayComment = () => {
+axios
+.get(commentsUrl)
+.then(response => {
+    response.data.forEach((commentsObj) => {
+        renderComments(commentsObj)
+        // let formatDate = new Date(response.data.date).toDateString();
+        // console.log(formatDate)
+    })})
+.catch(error => {
+    console.log(error)
+})
+}
+displayComment();
+
+const renderComments = (commentsObj) => {
+    const commentsContainer = document.querySelector(".comments__container")
+
     const borderTop = document.createElement("div")
     borderTop.classList.add("comments__border-top");
     commentsContainer.appendChild(borderTop);
@@ -58,55 +62,46 @@ const renderComments = (commentsObj, commentsContainer) => {
     commentsContainerRight.appendChild(commentsContent);
 }
 
-const displayComment = () => {
-    const commentsContainer = document.querySelector(".comments__container")
-    commentsContainer.innerHTML = "";
+//     commentsContainer.innerHTML = "";
 
-    for(let i = 0; i < comments.length; i++) {
-    renderComments(comments[i], commentsContainer)
-}
-}
+// const currentDate = new Date().toLocaleDateString();
 
-displayComment();
+// const form = document.querySelector(".form");
 
-const currentDate = new Date().toLocaleDateString();
+// form.addEventListener("submit", newInput=> {
 
-const form = document.querySelector(".form");
+//     newInput.preventDefault();
 
-form.addEventListener("submit", newInput=> {
+//     const newComment = {};
+//     newComment.name = newInput.target.name.value;
+//     newComment.comment = newInput.target.comment.value;
+//     newComment.date = currentDate;
 
-    newInput.preventDefault();
+// const showError = () => {
+//     const commentsAddForm = document.querySelector(".comments__add");
+//     const commentsAddInput = document.querySelector(".comments__input")
+//     commentsAddInput.classList.add("comments__input--error");
+//     const commentsAddError = document.createElement("p");
+//     commentsAddError.textContent = "Please fill out the comment field";
+//     commentsAddError.classList.add("comments__error");
+//     commentsAddForm.appendChild(commentsAddError);
 
-    const newComment = {};
-    newComment.name = newInput.target.name.value;
-    newComment.comment = newInput.target.comment.value;
-    newComment.date = currentDate;
+//     setTimeout(() => clearError(commentsAddForm, commentsAddInput, commentsAddError), 2000);
+// }
 
-const showError = () => {
-    const commentsAddForm = document.querySelector(".comments__add");
-    const commentsAddInput = document.querySelector(".comments__input")
-    commentsAddInput.classList.add("comments__input--error");
-    const commentsAddError = document.createElement("p");
-    commentsAddError.textContent = "Please fill out the comment field";
-    commentsAddError.classList.add("comments__error");
-    commentsAddForm.appendChild(commentsAddError);
+//     if(newComment.name !== "" && newComment.comment!== "") {
+//         comments.unshift(newComment);
+//     }else{
+//         showError();
+//     }
 
-    setTimeout(() => clearError(commentsAddForm, commentsAddInput, commentsAddError), 2000);
-}
+//     displayComment()
 
-    if(newComment.name !== "" && newComment.comment!== "") {
-        comments.unshift(newComment);
-    }else{
-        showError();
-    }
+// });
 
-    displayComment()
-
-});
-
-//Form validation:
-const clearError = (commentsAddForm, commentsAddInput, commentsAddError) => {
-    commentsAddForm.removeChild(commentsAddError);
-    commentsAddInput.classList.remove("comments__input--error")
-}
+// //Form validation:
+// const clearError = (commentsAddForm, commentsAddInput, commentsAddError) => {
+//     commentsAddForm.removeChild(commentsAddError);
+//     commentsAddInput.classList.remove("comments__input--error")
+// }
 
