@@ -9,10 +9,9 @@
         display: flex;
         justify-content: flex-start;
         padding-left: 2rem;
-        padding-top: 0.5rem;
+        padding-top: 1rem;
     }
     @include breakpoints.large {
-        padding-top: 1rem;
         padding-left: 8rem;
     }
 
@@ -53,7 +52,10 @@
     }
     &--active:hover {
         font-weight: 400;
-        transition: 0.3s ease-in-out;
+        transition: 0.5s ease-in-out;
+    }
+    &--a:hover {
+        border-bottom: 0.25rem solid $white;
     }
    @include breakpoints.medium {
        margin-left: 2rem;
@@ -61,6 +63,6 @@
 }
 &__list-link {
     text-decoration: none;
-    color: $white;
+    color: $mercury;
 }
 }

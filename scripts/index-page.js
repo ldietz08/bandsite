@@ -6,8 +6,6 @@ axios
 .then(response => {
     response.data.forEach((commentsObj) => {
         renderComments(commentsObj)
-        // let formatDate = new Date(response.data.date).toDateString();
-        // console.log(formatDate)
     })})
 .catch(error => {
     console.log(error)
@@ -15,9 +13,9 @@ axios
 }
 displayComment();
 
-const renderComments = (commentsObj) => {
-    const commentsContainer = document.querySelector(".comments__container")
+const commentsContainer = document.querySelector(".comments__container")
 
+const renderComments = (commentsObj) => {
     const borderTop = document.createElement("div")
     borderTop.classList.add("comments__border-top");
     commentsContainer.appendChild(borderTop);
@@ -53,7 +51,7 @@ const renderComments = (commentsObj) => {
 
     const commentsDate = document.createElement("p");
     commentsDate.classList.add("comments__date");
-    commentsDate.innerText = commentsObj.date;
+    commentsDate.innerText = new Date(commentsObj.timestamp).toLocaleDateString();
     dateContainer.appendChild(commentsDate);
 
     const commentsContent = document.createElement("p");
@@ -62,20 +60,42 @@ const renderComments = (commentsObj) => {
     commentsContainerRight.appendChild(commentsContent);
 }
 
-//     commentsContainer.innerHTML = "";
+const form = document.querySelector(".form");
 
-// const currentDate = new Date().toLocaleDateString();
+form.addEventListener("submit", newInput => {
+    newInput.preventDefault();
 
-// const form = document.querySelector(".form");
+    const newComment = {};
+    newComment.name = newInput.target.name.value;
+    newComment.comment = newInput.target.comment.value;
 
-// form.addEventListener("submit", newInput=> {
+    console.log(newComment)
 
-//     newInput.preventDefault();
+    axios
+    .post(commentsUrl, {
+        name: newComment.name,
+        comment: newComment.comment,
+    })
+    .then(response => {
+    renderComments(response.data)
+    if(newComment.name !== "" && newComment.comment!== "") {
+        commentsUrl.unshift(newComment);
+    }
+    // else {
+    //     showError()
+    // }
+   newInput.target.name.value = "";
+   newInput.target.comment.value = "";
+})
+.catch(error => {
+    console.log("An error has occurred", error);
+})
 
-//     const newComment = {};
-//     newComment.name = newInput.target.name.value;
-//     newComment.comment = newInput.target.comment.value;
-//     newComment.date = currentDate;
+});
+
+// displayComment();
+
+//Validation
 
 // const showError = () => {
 //     const commentsAddForm = document.querySelector(".comments__add");
@@ -89,17 +109,9 @@ const renderComments = (commentsObj) => {
 //     setTimeout(() => clearError(commentsAddForm, commentsAddInput, commentsAddError), 2000);
 // }
 
-//     if(newComment.name !== "" && newComment.comment!== "") {
-//         comments.unshift(newComment);
-//     }else{
-//         showError();
-//     }
+    // displayComment()
 
-//     displayComment()
 
-// });
-
-// //Form validation:
 // const clearError = (commentsAddForm, commentsAddInput, commentsAddError) => {
 //     commentsAddForm.removeChild(commentsAddError);
 //     commentsAddInput.classList.remove("comments__input--error")

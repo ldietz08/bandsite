@@ -6,8 +6,6 @@ axios
 .then(response => {
     response.data.forEach((showsObj) => {
         renderShows(showsObj)
-        // let formatDate = new Date(response.data.date).toDateString();
-        // console.log(formatDate)
     })})
     .catch(error => {
     console.log(error)
@@ -33,7 +31,7 @@ const renderShows = (showsObj) => {
 
     const showsItemDateText = document.createElement("p");
     showsItemDateText.classList.add("shows__item-text", "shows__item-text-date");
-    showsItemDateText.innerText = showsObj.date;
+    showsItemDateText.innerText = new Date(showsObj.date).toDateString();
     showsItemDate.appendChild(showsItemDateText);
 
     const showsItemVenue = document.createElement("div");
@@ -70,3 +68,9 @@ const renderShows = (showsObj) => {
     showsItemButton.innerText = "Buy Tickets";
     showsItemWrapper.appendChild(showsItemButton);
 }
+
+// const activeShowsItem = document.querySelector(".shows__item-wrapper")
+// document.addEventListener("click", () => {
+//     activeShowsItem.classList.add("shows__item-wrapper--active")
+// })
+

@@ -46,12 +46,11 @@ body {
     display: flex;
     justify-content: flex-start;
     padding-left: 2rem;
-    padding-top: 0.5rem;
+    padding-top: 1rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .header {
-    padding-top: 1rem;
     padding-left: 8rem;
   }
 }
@@ -97,7 +96,10 @@ body {
 }
 .header__list-item--active:hover {
   font-weight: 400;
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.header__list-item--a:hover {
+  border-bottom: 0.25rem solid #FFFFFF;
 }
 @media only screen and (min-width: 768px) {
   .header__list-item {
@@ -106,7 +108,7 @@ body {
 }
 .header__list-link {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #E1E1E1;
 }
 
 /* Hero section */
@@ -305,6 +307,11 @@ body {
     width: 40%;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .bio__content {
+    width: 32%;
+  }
+}
 
 /* Photo gallery */
 .gallery {
@@ -376,6 +383,7 @@ body {
 @media only screen and (min-width: 768px) {
   .form__title {
     padding-left: 3rem;
+    padding-top: 1rem;
     margin-bottom: 1rem;
   }
 }
@@ -393,6 +401,11 @@ body {
   margin-right: 1rem;
   margin-top: 1rem;
 }
+@media only screen and (min-width: 768px) {
+  .form__img {
+    margin-right: 0.5rem;
+  }
+}
 .form__label {
   font-size: 0.625rem;
   line-height: 1.25rem;
@@ -409,6 +422,7 @@ body {
   border: 1px solid #E1E1E1;
   width: 70vw;
   padding: 0.5rem;
+  margin-bottom: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .form__input {
@@ -423,9 +437,6 @@ body {
 .form__input-body {
   padding-bottom: 4rem;
 }
-.form__button {
-  padding-top: 1rem;
-}
 @media only screen and (min-width: 768px) {
   .form__button {
     display: flex;
@@ -433,18 +444,23 @@ body {
   }
 }
 .form__button-submit {
+  width: 100%;
   font-size: 0.625rem;
   line-height: 1.25rem;
   font-weight: 700;
   font-weight: 400;
   font-size: 0.875rem;
-  margin-bottom: 1.5rem;
   padding: 0.5rem;
   border: none;
   border-radius: 4px;
   color: #FFFFFF;
   background-color: #323232;
   text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .form__button-submit {
+    width: 30%;
+  }
 }
 .form__button-submit:hover {
   background-color: #000000;
@@ -461,6 +477,7 @@ body {
 .comments__container {
   display: flex;
   flex-wrap: wrap;
+  padding: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .comments__container {
@@ -487,8 +504,7 @@ body {
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
-  margin-top: 0.6rem;
-  margin-left: 0.5rem;
+  margin-top: 1rem;
 }
 .comments__content {
   color: #323232;
@@ -503,6 +519,8 @@ body {
   line-height: 1.125rem;
   font-weight: 400;
   font-weight: 600;
+  margin-left: 0.5rem;
+  margin-bottom: 0;
 }
 .comments__date {
   font-size: 0.875rem;
@@ -510,7 +528,6 @@ body {
   font-weight: 600;
   font-weight: 400;
   color: #AFAFAF;
-  padding-right: 1rem;
   margin-bottom: 0;
 }
 .comments__name-date {

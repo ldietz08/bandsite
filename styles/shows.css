@@ -46,12 +46,11 @@ body {
     display: flex;
     justify-content: flex-start;
     padding-left: 2rem;
-    padding-top: 0.5rem;
+    padding-top: 1rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .header {
-    padding-top: 1rem;
     padding-left: 8rem;
   }
 }
@@ -97,7 +96,10 @@ body {
 }
 .header__list-item--active:hover {
   font-weight: 400;
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.header__list-item--a:hover {
+  border-bottom: 0.25rem solid #FFFFFF;
 }
 @media only screen and (min-width: 768px) {
   .header__list-item {
@@ -106,7 +108,7 @@ body {
 }
 .header__list-link {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #E1E1E1;
 }
 
 /* Hero section */
@@ -238,6 +240,9 @@ body {
   .shows__item-wrapper:hover {
     background-color: #E1E1E1;
   }
+}
+.shows__item-wrapper:hover__item-wrapper--active {
+  background-color: #E1E1E1;
 }
 .shows__title-main {
   margin-bottom: 0;

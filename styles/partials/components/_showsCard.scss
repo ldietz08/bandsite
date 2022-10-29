@@ -33,6 +33,11 @@
         @include breakpoints.medium {
             background-color: $mercury;
         }
+    &__item-wrapper {
+        &--active{
+        background-color: $mercury;
+        }
+    }
     }
     &__title-main {
         margin-bottom: 0;
