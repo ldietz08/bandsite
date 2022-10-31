@@ -82,7 +82,6 @@ body {
 }
 .header__list-item {
   list-style: none;
-  color: #E1E1E1;
   width: 50%;
   text-align: center;
   padding-bottom: 0.5rem;
@@ -96,9 +95,11 @@ body {
 }
 .header__list-item--active:hover {
   font-weight: 400;
+  color: #FFFFFF;
   transition: 0.5s ease-in-out;
 }
 .header__list-item--a:hover {
+  color: #FFFFFF;
   border-bottom: 0.25rem solid #FFFFFF;
 }
 @media only screen and (min-width: 768px) {
@@ -108,6 +109,9 @@ body {
 }
 .header__list-link {
   text-decoration: none;
+  color: #FFFFFF;
+}
+.header__list-link--inactive {
   color: #E1E1E1;
 }
 
@@ -227,6 +231,7 @@ body {
   }
 }
 .shows__item-wrapper {
+  transition: 0.3s ease;
   border-bottom: 1px solid #E1E1E1;
 }
 @media only screen and (min-width: 768px) {
@@ -238,10 +243,10 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .shows__item-wrapper:hover {
-    background-color: #E1E1E1;
+    background-color: #FAFAFA;
   }
 }
-.shows__item-wrapper:hover__item-wrapper--active {
+.shows__item-wrapper--active {
   background-color: #E1E1E1;
 }
 .shows__title-main {

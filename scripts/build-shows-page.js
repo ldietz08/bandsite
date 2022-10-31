@@ -1,19 +1,18 @@
 const showDatesUrl = "https://project-1-api.herokuapp.com/showDates/?api_key=f45f2c53-e493-44e5-a5f0-78d66939e90e";
-
-const render = () => {
+let myArr = [];
 axios
 .get(showDatesUrl)
 .then(response => {
-    response.data.forEach((showsObj) => {
-        renderShows(showsObj)
-    })})
-    .catch(error => {
-    console.log(error)
+    myArr = response.data;
+    renderShows(myArr);
+    selectedShows();
 })
-}
-render();
+    .catch(error => {
+    console.log(error);
+})
 
 const renderShows = (showsObj) => {
+    for(let i = 0; i < showsObj.length; i++){
     let showsContainer = document.querySelector(".shows")
 
     const showsItemWrapper = document.createElement("div");
@@ -31,7 +30,7 @@ const renderShows = (showsObj) => {
 
     const showsItemDateText = document.createElement("p");
     showsItemDateText.classList.add("shows__item-text", "shows__item-text-date");
-    showsItemDateText.innerText = new Date(showsObj.date).toDateString();
+    showsItemDateText.innerText = new Date(showsObj[i].date + 86400000).toDateString();
     showsItemDate.appendChild(showsItemDateText);
 
     const showsItemVenue = document.createElement("div");
@@ -45,7 +44,7 @@ const renderShows = (showsObj) => {
 
     const showsItemVenueText = document.createElement("p");
     showsItemVenueText.classList.add("shows__item-text");
-    showsItemVenueText.innerText = showsObj.place;
+    showsItemVenueText.innerText = showsObj[i].place;
     showsItemVenue.appendChild(showsItemVenueText);
 
     const showsItemLocation = document.createElement("div");
@@ -59,7 +58,7 @@ const renderShows = (showsObj) => {
 
     const showsItemLocationText = document.createElement("p");
     showsItemLocationText.classList.add("shows__item-text");
-    showsItemLocationText.innerText = showsObj.location;
+    showsItemLocationText.innerText = showsObj[i].location;
     showsItemLocation.appendChild(showsItemLocationText);
 
     const showsItemButton = document.createElement("button");
@@ -67,10 +66,21 @@ const renderShows = (showsObj) => {
     showsItemButton.classList.add("shows__item-b")
     showsItemButton.innerText = "Buy Tickets";
     showsItemWrapper.appendChild(showsItemButton);
+    }
 }
 
-// const activeShowsItem = document.querySelector(".shows__item-wrapper")
-// document.addEventListener("click", () => {
-//     activeShowsItem.classList.add("shows__item-wrapper--active")
-// })
+const selectedShows = () => {
+    const activeShowsItems = document.querySelectorAll(".shows__item-wrapper")
+    activeShowsItems.forEach(element => {
+        element.addEventListener("click", (e) => selectedRow(e))
+})
 
+const selectedRow = (e) => {
+    activeShowsItems.forEach(element => {
+        if(element !== e.currentTarget) {
+            element.classList.remove("shows__item-wrapper--active")
+        }
+    })
+    e.currentTarget.classList.toggle("shows__item-wrapper--active")
+}
+}

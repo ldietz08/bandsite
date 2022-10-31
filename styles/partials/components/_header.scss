@@ -39,7 +39,6 @@
 }
 &__list-item {
    list-style: none;
-   color: $mercury;
    width: 50%;
    text-align: center;
    padding-bottom: 0.5rem;
@@ -52,9 +51,11 @@
     }
     &--active:hover {
         font-weight: 400;
+        color: $white;
         transition: 0.5s ease-in-out;
     }
     &--a:hover {
+        color: $white;
         border-bottom: 0.25rem solid $white;
     }
    @include breakpoints.medium {
@@ -63,6 +64,9 @@
 }
 &__list-link {
     text-decoration: none;
-    color: $mercury;
+    color: $white;
+    &--inactive {
+        color: $mercury;
+    }
 }
 }

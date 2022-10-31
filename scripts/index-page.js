@@ -1,21 +1,13 @@
 const commentsUrl = "https://project-1-api.herokuapp.com/comments/?api_key=f45f2c53-e493-44e5-a5f0-78d66939e90e";
 
-const displayComment = () => {
-axios
-.get(commentsUrl)
-.then(response => {
-    response.data.forEach((commentsObj) => {
-        renderComments(commentsObj)
-    })})
-.catch(error => {
-    console.log(error)
-})
-}
-displayComment();
-
 const commentsContainer = document.querySelector(".comments__container")
 
-const renderComments = (commentsObj) => {
+const displayComment = (commentsObj) => {
+
+    commentsContainer.innerHTML = "";
+
+    for(let i = 0; i < commentsObj.length; i++) {
+        
     const borderTop = document.createElement("div")
     borderTop.classList.add("comments__border-top");
     commentsContainer.appendChild(borderTop);
@@ -42,7 +34,7 @@ const renderComments = (commentsObj) => {
 
     const commentsName = document.createElement("h3"); 
     commentsName.classList.add("comments__name");
-    commentsName.innerText = commentsObj.name;
+    commentsName.innerText = commentsObj[i].name;
     nameContainer.appendChild(commentsName);
 
     const dateContainer = document.createElement("div");
@@ -51,69 +43,70 @@ const renderComments = (commentsObj) => {
 
     const commentsDate = document.createElement("p");
     commentsDate.classList.add("comments__date");
-    commentsDate.innerText = new Date(commentsObj.timestamp).toLocaleDateString();
+    commentsDate.innerText = new Date(commentsObj[i].timestamp).toLocaleDateString();
     dateContainer.appendChild(commentsDate);
 
     const commentsContent = document.createElement("p");
-    commentsContent.classList.add("comments__content");
-    commentsContent.innerText = commentsObj.comment;
+    commentsContent.classList.add("comments__text");
+    commentsContent.innerText = commentsObj[i].comment;
     commentsContainerRight.appendChild(commentsContent);
+    }
 }
 
+let newCommentArr = [];
+
+axios
+.get(commentsUrl)
+.then(response => {
+    newCommentArr = response.data;
+    newCommentArr.sort((a,b) => b.timestamp - a.timestamp);
+    displayComment(newCommentArr);
+})
+.catch(error => {
+    console.log(error);
+})
+
 const form = document.querySelector(".form");
+
+
+const clearError = (commentsAddForm, commentsAddInput, commentsAddError) => {
+    commentsAddForm.removeChild(commentsAddError);
+    commentsAddInput.classList.remove("comments__input--error")
+}
+
+//Form validation
+const showError = () => {
+    const commentsAddForm = document.querySelector(".form");
+    const commentsAddInput = document.querySelector(".form__input")
+    commentsAddInput.classList.add("form__input--error");
+    const commentsAddError = document.createElement("p");
+    commentsAddError.textContent = "Please fill out the comment field";
+    commentsAddError.classList.add("comments__error");
+    commentsAddForm.appendChild(commentsAddError);
+
+    setTimeout(() => clearError(commentsAddForm, commentsAddInput, commentsAddError), 2000);
+}
 
 form.addEventListener("submit", newInput => {
     newInput.preventDefault();
 
-    const newComment = {};
-    newComment.name = newInput.target.name.value;
-    newComment.comment = newInput.target.comment.value;
+    const userName = newInput.target.name.value;
+    const userComment = newInput.target.comment.value;
 
-    console.log(newComment)
-
-    axios
-    .post(commentsUrl, {
-        name: newComment.name,
-        comment: newComment.comment,
-    })
-    .then(response => {
-    renderComments(response.data)
-    if(newComment.name !== "" && newComment.comment!== "") {
-        commentsUrl.unshift(newComment);
+    const newComment = {
+        name: userName,
+        comment: userComment
     }
-    // else {
-    //     showError()
-    // }
-   newInput.target.name.value = "";
-   newInput.target.comment.value = "";
+    axios
+    .post(commentsUrl, newComment)
+    .then(response => {
+        newCommentArr.unshift(response.data);
+        displayComment(newCommentArr);
+        console.log(newCommentArr)
+        form.reset();
 })
 .catch(error => {
     console.log("An error has occurred", error);
 })
 
 });
-
-// displayComment();
-
-//Validation
-
-// const showError = () => {
-//     const commentsAddForm = document.querySelector(".comments__add");
-//     const commentsAddInput = document.querySelector(".comments__input")
-//     commentsAddInput.classList.add("comments__input--error");
-//     const commentsAddError = document.createElement("p");
-//     commentsAddError.textContent = "Please fill out the comment field";
-//     commentsAddError.classList.add("comments__error");
-//     commentsAddForm.appendChild(commentsAddError);
-
-//     setTimeout(() => clearError(commentsAddForm, commentsAddInput, commentsAddError), 2000);
-// }
-
-    // displayComment()
-
-
-// const clearError = (commentsAddForm, commentsAddInput, commentsAddError) => {
-//     commentsAddForm.removeChild(commentsAddError);
-//     commentsAddInput.classList.remove("comments__input--error")
-// }
-

@@ -82,7 +82,6 @@ body {
 }
 .header__list-item {
   list-style: none;
-  color: #E1E1E1;
   width: 50%;
   text-align: center;
   padding-bottom: 0.5rem;
@@ -96,9 +95,11 @@ body {
 }
 .header__list-item--active:hover {
   font-weight: 400;
+  color: #FFFFFF;
   transition: 0.5s ease-in-out;
 }
 .header__list-item--a:hover {
+  color: #FFFFFF;
   border-bottom: 0.25rem solid #FFFFFF;
 }
 @media only screen and (min-width: 768px) {
@@ -108,6 +109,9 @@ body {
 }
 .header__list-link {
   text-decoration: none;
+  color: #FFFFFF;
+}
+.header__list-link--inactive {
   color: #E1E1E1;
 }
 
@@ -260,6 +264,17 @@ body {
 /* Biography section */
 .bio {
   padding: 0 1rem;
+  width: 75%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 1280px) {
+  .bio {
+    width: 63%;
+  }
+}
+.bio__title-container {
+  display: flex;
+  justify-content: flex-start;
 }
 .bio__title {
   color: #000000;
@@ -275,13 +290,10 @@ body {
     font-weight: 600;
     margin: 0;
     font-size: 1rem;
-    padding-top: 1rem;
-    padding-left: 6rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .bio__title {
-    padding-left: 15rem;
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
@@ -294,22 +306,23 @@ body {
     justify-content: center;
   }
 }
+.bio__content-text {
+  margin-top: 0;
+}
+.bio__content-text-left {
+  padding-right: 1.1rem;
+}
 .bio__content {
   color: #323232;
+  justify-content: center;
   font-size: 0.813rem;
   line-height: 1.125rem;
   font-weight: 400;
 }
 @media only screen and (min-width: 768px) {
   .bio__content {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0rem;
     margin-top: 0;
-    width: 40%;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .bio__content {
-    width: 32%;
   }
 }
 
@@ -506,7 +519,7 @@ body {
   height: 2.5rem;
   margin-top: 1rem;
 }
-.comments__content {
+.comments__text {
   color: #323232;
   margin-top: 0;
   padding-left: 0.5rem;

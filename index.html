@@ -15,7 +15,7 @@
         <nav class="header__navigation">
             <ul class="header__list">
                 <li class="header__list-item header__list-item--active"><a href="./index.html" class="header__list-link">Biography</a></li>
-                <li class="header__list-item header__list-item--a"><a href="./pages/shows.html" class="header__list-link">Shows</a></li>
+                <li class="header__list-item"><a href="./pages/shows.html" class="header__list-link header__list-link--inactive">Shows</a></li>
             </ul>
         </nav>
     </header>
@@ -35,24 +35,27 @@
     </section>
     
     <section class="bio">
-        <div class="bio__title-container">
-        <h3 class="bio__title">The Bees Knees</h3>
-        </div>
-        <div class="bio__content-container">
-            <p class="bio__content"> 
-                The Bees Knees is a pop rock band originating from San Francisco, California. The band consists of lead vocalist Bryan
-            Teddy, guitarist Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee and drummer Freddie Fischer. The band
-            achieved its first commercial success as an unsigned act, drawing attention from manager Cam Adams. Having worked with
-            other popular acts (The Elephant In The Room, One Trick Pony, The Cat’s Meow), Adams was confident the band could
-            succeed even further, pushing them to sign with Magenta Records.</p>
-            
-            <p class="bio__content">
-                From there, the band has soared, gaining international recognition and ranking in the top 10 on the Poster Charts. New
-            fans immediately fell in love with the band’s original and organic attitude, solidifying their place as one of the
-            hottest and fastest up and coming acts of this century. Fans affectionately refer to themselves as “The Hive” and are
-            drawn to their candid and authentic performances on stage. Looking forward to touring in the future, The Bees Knees are
-            currently recording their second studio album, looking to be released in late 2021.</p>
-        </div>
+            <div class="bio__title-container">
+                <h3 class="bio__title">The Bees Knees</h3>
+            </div>
+            <div class="bio__content-container">
+                <div class="bio__content">
+                    <p class="bio__content-text bio__content-text-left"> 
+                        The Bees Knees is a pop rock band originating from San Francisco, California. The band consists of lead vocalist Bryan
+                    Teddy, guitarist Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee and drummer Freddie Fischer. The band
+                    achieved its first commercial success as an unsigned act, drawing attention from manager Cam Adams. Having worked with
+                    other popular acts (The Elephant In The Room, One Trick Pony, The Cat’s Meow), Adams was confident the band could
+                    succeed even further, pushing them to sign with Magenta Records.</p>
+                </div>
+                <div class="bio__content">
+                    <p class="bio__content-text">
+                        From there, the band has soared, gaining international recognition and ranking in the top 10 on the Poster Charts. New
+                    fans immediately fell in love with the band’s original and organic attitude, solidifying their place as one of the
+                    hottest and fastest up and coming acts of this century. Fans affectionately refer to themselves as “The Hive” and are
+                    drawn to their candid and authentic performances on stage. Looking forward to touring in the future, The Bees Knees are
+                    currently recording their second studio album, looking to be released in late 2021.</p>
+                </div>
+            </div>
     </section>
 
     <section class="gallery">
@@ -79,7 +82,7 @@
                             <div class="form__img"></div>
                             <div class="form__item-input">
                             <label for="name" class="form__label">Name</label>
-                            <input type="text" id="comment" name="name" required placeholder="Enter your name"
+                            <input type="text" id="name" name="name" required placeholder="Enter your name"
                                 class="form__input">
                             <label for="comment" class="form__label">Comment</label>
                             <input type="text" id="comment" name="comment" required placeholder="Add a new comment"
@@ -89,8 +92,8 @@
                             </div>
                             </div>
                         </div>
-                    <div class="comments__container"></div>
             </form>
+            <div class="comments__container"></div>
         </div>
     </section>
 
