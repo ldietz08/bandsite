@@ -9,10 +9,9 @@
         display: flex;
         justify-content: flex-start;
         padding-left: 2rem;
-        padding-top: 0.5rem;
+        padding-top: 1rem;
     }
     @include breakpoints.large {
-        padding-top: 1rem;
         padding-left: 8rem;
     }
 
@@ -40,7 +39,6 @@
 }
 &__list-item {
    list-style: none;
-   color: $mercury;
    width: 50%;
    text-align: center;
    padding-bottom: 0.5rem;
@@ -50,11 +48,16 @@
     &--active {
         border-bottom: 0.25rem solid $white;
         font-weight: 600;
-        color: $white;
     }
     &--active:hover {
         font-weight: 400;
+        color: $white;
         transition: 0.3s ease-in-out;
+    }
+    &--a:hover {
+        color: $white;
+        transition: 0.3s ease-in-out;
+        border-bottom: 0.25rem solid $white;
     }
    @include breakpoints.medium {
        margin-left: 2rem;
@@ -63,5 +66,8 @@
 &__list-link {
     text-decoration: none;
     color: $white;
+    &--inactive {
+        color: $mercury;
+    }
 }
 }

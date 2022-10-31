@@ -1,20 +1,18 @@
-const comments = [
-    { 
-    name: "Connor Walton", 
-    date: '02/17/2021', 
-    comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."},
-    {
-    name: "Emilie Beach", 
-    date: '01/09/2021', 
-    comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
-    {
-    name: "Miles Acosta", 
-    date: '12/20/2020', 
-    comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough." },
-]
+//Store API url in a variable 
+const commentsUrl = "https://project-1-api.herokuapp.com/comments/?api_key=f45f2c53-e493-44e5-a5f0-78d66939e90e";
 
-const renderComments = (commentsObj, commentsContainer) => {
-    // create a div above for the border top;
+const commentsContainer = document.querySelector(".comments__container")
+
+//Function to loop through the API data and render the DOM 
+const displayComment = (commentsObj) => {
+    //clear the comments container 
+    commentsContainer.innerHTML = "";
+
+    for(let i = 0; i < commentsObj.length; i++) {
+        
+    const border = document.createElement("div")
+    border.classList.add("comments__border");
+    commentsContainer.appendChild(border);
 
     const contentContainer = document.createElement("div");
     contentContainer.classList.add("comments__content-container");
@@ -38,7 +36,7 @@ const renderComments = (commentsObj, commentsContainer) => {
 
     const commentsName = document.createElement("h3"); 
     commentsName.classList.add("comments__name");
-    commentsName.innerText = commentsObj.name;
+    commentsName.innerText = commentsObj[i].name;
     nameContainer.appendChild(commentsName);
 
     const dateContainer = document.createElement("div");
@@ -47,43 +45,45 @@ const renderComments = (commentsObj, commentsContainer) => {
 
     const commentsDate = document.createElement("p");
     commentsDate.classList.add("comments__date");
-    commentsDate.innerText = commentsObj.date;
+    commentsDate.innerText = new Date(commentsObj[i].timestamp).toLocaleDateString();
     dateContainer.appendChild(commentsDate);
-
+    
     const commentsContent = document.createElement("p");
-    commentsContent.classList.add("comments__content");
-    commentsContent.innerText = commentsObj.comment;
+    commentsContent.classList.add("comments__text");
+    commentsContent.innerText = commentsObj[i].comment;
     commentsContainerRight.appendChild(commentsContent);
+    }
 }
 
-const displayComment = () => {
-    const commentsContainer = document.querySelector(".comments__container")
-    commentsContainer.innerHTML = "";
+//Create an empty array to hold the new comments
+let newCommentArr = [];
 
-    for(let i = 0; i < comments.length; i++) {
-    renderComments(comments[i], commentsContainer)
+/*
+Axios get request
+Data is added to the new comment array, and is sorted so the most recent comment is first
+*/
+axios
+.get(commentsUrl)
+.then(response => {
+    newCommentArr = response.data;
+    newCommentArr.sort((a,b) => b.timestamp - a.timestamp);
+    displayComment(newCommentArr);
+})
+.catch(error => {
+     console.log("An error has occurred", error);
+})
+
+
+const clearError = (commentsAddForm, commentsAddInput, commentsAddError) => {
+    commentsAddForm.removeChild(commentsAddError);
+    commentsAddInput.classList.remove("comments__input--error")
 }
-}
 
-displayComment();
-
-const currentDate = new Date().toLocaleDateString();
-
-const form = document.querySelector(".comments__input");
-
-form.addEventListener("submit", newInput=> {
-
-    newInput.preventDefault();
-
-    const newComment = {};
-    newComment.name = newInput.target.name.value;
-    newComment.comment = newInput.target.comment.value;
-    newComment.date = currentDate;
-
+//Form validation
 const showError = () => {
-    const commentsAddForm = document.querySelector(".comments__add");
-    const commentsAddInput = document.querySelector(".comments__input")
-    commentsAddInput.classList.add("comments__input--error");
+    const commentsAddForm = document.querySelector(".form");
+    const commentsAddInput = document.querySelector(".form__input")
+    commentsAddInput.classList.add("form__input--error");
     const commentsAddError = document.createElement("p");
     commentsAddError.textContent = "Please fill out the comment field";
     commentsAddError.classList.add("comments__error");
@@ -92,19 +92,34 @@ const showError = () => {
     setTimeout(() => clearError(commentsAddForm, commentsAddInput, commentsAddError), 2000);
 }
 
-    if(newComment.name !== "" && newComment.comment!== "") {
-        comments.unshift(newComment);
-    }else{
-        showError();
+//Select the form 
+const form = document.querySelector(".form");
+
+//Add an event listener to the form 
+form.addEventListener("submit", newInput => {
+    newInput.preventDefault();
+
+    const userName = newInput.target.name.value;
+    const userComment = newInput.target.comment.value;
+
+    const newComment = {
+        name: userName,
+        comment: userComment
     }
 
-    displayComment()
+/* 
+Axios post request
+Resolve adds new comments to the top, displays them and resets the form
+*/
+    axios
+    .post(commentsUrl, newComment)
+    .then(response => {
+        newCommentArr.unshift(response.data);
+        displayComment(newCommentArr);
+        form.reset();
+})
+.catch(error => {
+    console.log("An error has occurred", error);
+})
 
 });
-
-//Form validation:
-const clearError = (commentsAddForm, commentsAddInput, commentsAddError) => {
-    commentsAddForm.removeChild(commentsAddError);
-    commentsAddInput.classList.remove("comments__input--error")
-}
-

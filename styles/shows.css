@@ -46,12 +46,11 @@ body {
     display: flex;
     justify-content: flex-start;
     padding-left: 2rem;
-    padding-top: 0.5rem;
+    padding-top: 1rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .header {
-    padding-top: 1rem;
     padding-left: 8rem;
   }
 }
@@ -83,7 +82,6 @@ body {
 }
 .header__list-item {
   list-style: none;
-  color: #E1E1E1;
   width: 50%;
   text-align: center;
   padding-bottom: 0.5rem;
@@ -94,11 +92,16 @@ body {
 .header__list-item--active {
   border-bottom: 0.25rem solid #FFFFFF;
   font-weight: 600;
-  color: #FFFFFF;
 }
 .header__list-item--active:hover {
   font-weight: 400;
+  color: #FFFFFF;
   transition: 0.3s ease-in-out;
+}
+.header__list-item--a:hover {
+  color: #FFFFFF;
+  transition: 0.3s ease-in-out;
+  border-bottom: 0.25rem solid #FFFFFF;
 }
 @media only screen and (min-width: 768px) {
   .header__list-item {
@@ -108,6 +111,9 @@ body {
 .header__list-link {
   text-decoration: none;
   color: #FFFFFF;
+}
+.header__list-link--inactive {
+  color: #E1E1E1;
 }
 
 /* Hero section */
@@ -205,7 +211,7 @@ body {
 .shows {
   display: flex;
   flex-direction: column;
-  padding: 0 1.5rem 1.5rem 1.5rem;
+  padding: 0 1rem;
 }
 @media only screen and (min-width: 768px) {
   .shows {
@@ -226,6 +232,7 @@ body {
   }
 }
 .shows__item-wrapper {
+  transition: 0.3s ease;
   border-bottom: 1px solid #E1E1E1;
 }
 @media only screen and (min-width: 768px) {
@@ -237,8 +244,11 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .shows__item-wrapper:hover {
-    background-color: #E1E1E1;
+    background-color: #FAFAFA;
   }
+}
+.shows__item-wrapper--active {
+  background-color: #E1E1E1;
 }
 .shows__title-main {
   margin-bottom: 0;
@@ -321,6 +331,7 @@ body {
   font-weight: 700;
   font-size: 0.875rem;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   padding: 0.8rem;
   border: none;
   border-radius: 6px;

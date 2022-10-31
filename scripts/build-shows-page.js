@@ -1,38 +1,24 @@
+//Store API url in variable 
+const showDatesUrl = "https://project-1-api.herokuapp.com/showDates/?api_key=f45f2c53-e493-44e5-a5f0-78d66939e90e";
 
-const shows = [
-    {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA"
-    },
-    {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA"
-    },
-    {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA"
-    },
-    {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-    },
-    {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA"
-    },
-    {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA"
-    },
-];
+/*
+Axios get request 
+Render shows data and implement the selected rows functionality 
+*/
+axios
+.get(showDatesUrl)
+.then(response => {
+    renderShows(response.data);
+    selectedShows();
+})
+    .catch(error => {
+    console.log(error);
+})
 
-const renderShows = (showsObj, showsContainer) => {
+//Function to loop through the api data and render the DOM 
+const renderShows = (showsObj) => {
+    for(let i = 0; i < showsObj.length; i++){
+    let showsContainer = document.querySelector(".shows")
 
     const showsItemWrapper = document.createElement("div");
     showsItemWrapper.classList.add("shows__item-wrapper");
@@ -49,7 +35,7 @@ const renderShows = (showsObj, showsContainer) => {
 
     const showsItemDateText = document.createElement("p");
     showsItemDateText.classList.add("shows__item-text", "shows__item-text-date");
-    showsItemDateText.innerText = showsObj.date;
+    showsItemDateText.innerText = new Date(showsObj[i].date + 86400000).toDateString();
     showsItemDate.appendChild(showsItemDateText);
 
     const showsItemVenue = document.createElement("div");
@@ -63,7 +49,7 @@ const renderShows = (showsObj, showsContainer) => {
 
     const showsItemVenueText = document.createElement("p");
     showsItemVenueText.classList.add("shows__item-text");
-    showsItemVenueText.innerText = showsObj.venue;
+    showsItemVenueText.innerText = showsObj[i].place;
     showsItemVenue.appendChild(showsItemVenueText);
 
     const showsItemLocation = document.createElement("div");
@@ -77,7 +63,7 @@ const renderShows = (showsObj, showsContainer) => {
 
     const showsItemLocationText = document.createElement("p");
     showsItemLocationText.classList.add("shows__item-text");
-    showsItemLocationText.innerText = showsObj.location;
+    showsItemLocationText.innerText = showsObj[i].location;
     showsItemLocation.appendChild(showsItemLocationText);
 
     const showsItemButton = document.createElement("button");
@@ -85,15 +71,25 @@ const renderShows = (showsObj, showsContainer) => {
     showsItemButton.classList.add("shows__item-b")
     showsItemButton.innerText = "Buy Tickets";
     showsItemWrapper.appendChild(showsItemButton);
+    }
 }
+//Function to select and add a click event to each row in the shows table
+const selectedShows = () => {
+    const activeShowsItems = document.querySelectorAll(".shows__item-wrapper")
+    activeShowsItems.forEach(element => {
+        element.addEventListener("click", (e) => selectedRow(e))
+})
 
-const render = () => {
-    const showsContainer = document.querySelector(".shows")
-    showsContainer.innerHTML = "";
-
-    for(let i = 0; i < shows.length; i++) {
-    renderShows(shows[i], showsContainer)
+/*
+Function to remove active class on rows that are 
+not being selected and add active class on selected row
+*/
+const selectedRow = (e) => {
+    activeShowsItems.forEach(element => {
+        if(element !== e.currentTarget) {
+            element.classList.remove("shows__item-wrapper--active")
+        }
+    })
+    e.currentTarget.classList.toggle("shows__item-wrapper--active")
 }
 }
-
-render();
