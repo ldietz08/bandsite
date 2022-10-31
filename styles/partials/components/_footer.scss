@@ -75,10 +75,10 @@
 &__content {
     margin-top: 2rem;
     @include breakpoints.medium {
-        padding-right: 1rem;
+        padding-right: 1.5rem;
     }
     @include breakpoints.large {
-        padding-right: 5rem;
+        padding-right: 4rem;
     }
 }
 &__logo-container {

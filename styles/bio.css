@@ -153,12 +153,12 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .hero__title-container {
-    height: 60vh;
+    height: 65vh;
   }
 }
 @media only screen and (min-width: 1280px) {
   .hero__title-container {
-    height: 80vh;
+    height: 70vh;
     background-position: 80% 20%;
   }
 }
@@ -261,6 +261,11 @@ body {
     padding-top: 0;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .about__quote-span {
+    margin-bottom: 2rem;
+  }
+}
 
 /* Biography section */
 .bio {
@@ -338,7 +343,7 @@ body {
 }
 .gallery__title {
   color: #323232;
-  padding: 1.5rem 0 1rem 1rem;
+  padding: 1.5rem 0 0.5rem 1rem;
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 600;
@@ -449,7 +454,7 @@ body {
 }
 @media only screen and (min-width: 1280px) {
   .form__input {
-    width: 57vw;
+    width: 35vw;
   }
 }
 .form__input-body {
@@ -505,8 +510,8 @@ body {
 }
 @media only screen and (min-width: 1280px) {
   .comments__container {
-    padding-left: 15rem;
-    padding-right: 15rem;
+    padding-left: 25rem;
+    padding-right: 25rem;
   }
 }
 .comments__content-container {
@@ -522,7 +527,8 @@ body {
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
 }
 .comments__text {
   color: #323232;
@@ -651,12 +657,12 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .footer__content {
-    padding-right: 1rem;
+    padding-right: 1.5rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .footer__content {
-    padding-right: 5rem;
+    padding-right: 4rem;
   }
 }
 .footer__logo-container {
