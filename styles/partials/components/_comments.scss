@@ -3,7 +3,7 @@
 @use "../text-styles"as text;
 
 .comments {
-&__border-top {
+&__border{
     width: 100%;
     border-bottom: 1px solid $mercury;
 }

@@ -1,16 +1,18 @@
+//Store API url in a variable 
 const commentsUrl = "https://project-1-api.herokuapp.com/comments/?api_key=f45f2c53-e493-44e5-a5f0-78d66939e90e";
 
 const commentsContainer = document.querySelector(".comments__container")
 
+//Function to loop through the API data and render the DOM 
 const displayComment = (commentsObj) => {
-
+    //clear the comments container 
     commentsContainer.innerHTML = "";
 
     for(let i = 0; i < commentsObj.length; i++) {
         
-    const borderTop = document.createElement("div")
-    borderTop.classList.add("comments__border-top");
-    commentsContainer.appendChild(borderTop);
+    const border = document.createElement("div")
+    border.classList.add("comments__border");
+    commentsContainer.appendChild(border);
 
     const contentContainer = document.createElement("div");
     contentContainer.classList.add("comments__content-container");
@@ -53,8 +55,13 @@ const displayComment = (commentsObj) => {
     }
 }
 
+//Create an empty array to hold the new comments
 let newCommentArr = [];
 
+/*
+Axios get request
+Data is added to the new comment array, and is sorted so the most recent comment is first
+*/
 axios
 .get(commentsUrl)
 .then(response => {
@@ -63,10 +70,8 @@ axios
     displayComment(newCommentArr);
 })
 .catch(error => {
-    console.log(error);
+     console.log("An error has occurred", error);
 })
-
-const form = document.querySelector(".form");
 
 
 const clearError = (commentsAddForm, commentsAddInput, commentsAddError) => {
@@ -87,6 +92,10 @@ const showError = () => {
     setTimeout(() => clearError(commentsAddForm, commentsAddInput, commentsAddError), 2000);
 }
 
+//Select the form 
+const form = document.querySelector(".form");
+
+//Add an event listener to the form 
 form.addEventListener("submit", newInput => {
     newInput.preventDefault();
 
@@ -97,12 +106,16 @@ form.addEventListener("submit", newInput => {
         name: userName,
         comment: userComment
     }
+
+/* 
+Axios post request
+Resolve adds new comments to the top, displays them and resets the form
+*/
     axios
     .post(commentsUrl, newComment)
     .then(response => {
         newCommentArr.unshift(response.data);
         displayComment(newCommentArr);
-        console.log(newCommentArr)
         form.reset();
 })
 .catch(error => {

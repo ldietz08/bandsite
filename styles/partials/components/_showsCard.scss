@@ -19,25 +19,28 @@
         @include breakpoints.medium {
         width: 25%;
         }
-    }
-    &__item-wrapper {
-        transition: 0.3s ease;
-        border-bottom: 1px solid $mercury;
-        @include breakpoints.medium {
-            display: flex;
-            width: 100%;
-            justify-content: space-around;
-        }
-    }
-    &__item-wrapper:hover {
-        @include breakpoints.medium {
-            background-color: $alabaster;
-        }
-    }
-    &__item-wrapper {
-        &--active{
-        background-color: $mercury;
-        }
+            &-wrapper {
+                transition: 0.3s ease;
+                border-bottom: 1px solid $mercury;
+            
+                @include breakpoints.medium {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-around;
+                }
+            }
+            
+            &-wrapper:hover {
+                @include breakpoints.medium {
+                    background-color: $alabaster;
+                }
+            }
+            
+            &-wrapper {
+                &--active {
+                    background-color: $mercury;
+                }
+            }
     }
     &__title-main {
         margin-bottom: 0;

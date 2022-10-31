@@ -1,16 +1,21 @@
+//Store API url in variable 
 const showDatesUrl = "https://project-1-api.herokuapp.com/showDates/?api_key=f45f2c53-e493-44e5-a5f0-78d66939e90e";
-let myArr = [];
+
+/*
+Axios get request 
+Render shows data and implement the selected rows functionality 
+*/
 axios
 .get(showDatesUrl)
 .then(response => {
-    myArr = response.data;
-    renderShows(myArr);
+    renderShows(response.data);
     selectedShows();
 })
     .catch(error => {
     console.log(error);
 })
 
+//Function to loop through the api data and render the DOM 
 const renderShows = (showsObj) => {
     for(let i = 0; i < showsObj.length; i++){
     let showsContainer = document.querySelector(".shows")
@@ -68,13 +73,17 @@ const renderShows = (showsObj) => {
     showsItemWrapper.appendChild(showsItemButton);
     }
 }
-
+//Function to select and add a click event to each row in the shows table
 const selectedShows = () => {
     const activeShowsItems = document.querySelectorAll(".shows__item-wrapper")
     activeShowsItems.forEach(element => {
         element.addEventListener("click", (e) => selectedRow(e))
 })
 
+/*
+Function to remove active class on elements that are 
+not being selected and add active class on selected row
+*/
 const selectedRow = (e) => {
     activeShowsItems.forEach(element => {
         if(element !== e.currentTarget) {
