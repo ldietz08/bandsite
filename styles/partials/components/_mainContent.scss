@@ -31,10 +31,10 @@
     align-items: center;
     color: $white;
     @include breakpoints.medium {
-        height: 60vh;
+        height: 65vh;
     }
     @include breakpoints.large {
-        height: 80vh;
+        height: 70vh;
         background-position: 80% 20%;
     }
 }
@@ -112,6 +112,9 @@
        font-weight: 600;
        padding-top: 0;
     }
+    @include breakpoints.large {
+        margin-bottom: 2rem;
+    }
 }
 }
 
@@ -173,7 +176,7 @@
     padding-bottom:0.5rem;
 &__title {
     color: $black;
-    padding: 1.5rem 0 1rem 1rem;
+    padding: 1.5rem 0 0.5rem 1rem;
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 600;
@@ -263,7 +266,7 @@
         padding: 1rem;
     }
     @include breakpoints.large {
-        width: 57vw;
+        width: 35vw;
     }
 }
 &__input-body {

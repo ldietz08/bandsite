@@ -447,12 +447,12 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .footer__content {
-    padding-right: 1rem;
+    padding-right: 1.5rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .footer__content {
-    padding-right: 5rem;
+    padding-right: 4rem;
   }
 }
 .footer__logo-container {
