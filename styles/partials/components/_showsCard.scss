@@ -5,7 +5,7 @@
 .shows {
     display: flex;
     flex-direction: column;
-    padding: 0 1.5rem 1.5rem 1.5rem;
+    padding:0 1rem;
     @include breakpoints.medium {
         display: flex;
         flex-direction: row;
@@ -106,6 +106,7 @@
         @include text.labels-buttons-mobile;
         font-size: 0.875rem;
         margin-top: 1rem;
+        margin-bottom:  1rem;
         padding: 0.8rem;
         border: none;
         border-radius: 6px;
