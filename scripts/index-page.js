@@ -47,7 +47,7 @@ const displayComment = (commentsObj) => {
     commentsDate.classList.add("comments__date");
     commentsDate.innerText = new Date(commentsObj[i].timestamp).toLocaleDateString();
     dateContainer.appendChild(commentsDate);
-
+    
     const commentsContent = document.createElement("p");
     commentsContent.classList.add("comments__text");
     commentsContent.innerText = commentsObj[i].comment;

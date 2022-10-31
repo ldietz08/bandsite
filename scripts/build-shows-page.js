@@ -81,7 +81,7 @@ const selectedShows = () => {
 })
 
 /*
-Function to remove active class on elements that are 
+Function to remove active class on rows that are 
 not being selected and add active class on selected row
 */
 const selectedRow = (e) => {

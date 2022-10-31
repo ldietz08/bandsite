@@ -118,8 +118,10 @@
 /* Biography section */
 .bio {
     padding: 0 1rem;
-    width: 75%;
-    margin: 0 auto;
+    @include breakpoints.medium {
+        width: 75%;
+        margin: 0 auto;
+    }
     @include breakpoints.large {
         width: 63%;
     }

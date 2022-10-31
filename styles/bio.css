@@ -96,10 +96,11 @@ body {
 .header__list-item--active:hover {
   font-weight: 400;
   color: #FFFFFF;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .header__list-item--a:hover {
   color: #FFFFFF;
+  transition: 0.3s ease-in-out;
   border-bottom: 0.25rem solid #FFFFFF;
 }
 @media only screen and (min-width: 768px) {
@@ -264,8 +265,12 @@ body {
 /* Biography section */
 .bio {
   padding: 0 1rem;
-  width: 75%;
-  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  .bio {
+    width: 75%;
+    margin: 0 auto;
+  }
 }
 @media only screen and (min-width: 1280px) {
   .bio {
